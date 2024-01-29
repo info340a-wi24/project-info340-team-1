@@ -3,9 +3,13 @@
 }
 
 body {
-
+  background-color: antiquewhite;
+  font-family: 'Nunito Sans', Arial, sans-serif;
+  font-size: 18px;
 }
 
 h1 {
-
+  font-family: 'Raleway', Helvetica, sans-serif;
+  font-weight: 300;
+  text-align: center;
 }
