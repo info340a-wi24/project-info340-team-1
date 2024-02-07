@@ -11,6 +11,10 @@ body {
     box-sizing: border-box;
 }
 
+body .form  {
+    background-color: rgb(147, 192, 221);
+}
+
 header {
     display: flex;
     justify-content: flex-end;
@@ -19,6 +23,10 @@ header {
     align-items: center;
     padding: 20px 50px;
     box-shadow: 0 1px 8px #ddd;
+}
+
+header h1 {
+    color: white;
 }
 
 #nav-title {
@@ -96,7 +104,8 @@ header a {
 .quick-links {
     flex: 1;
     flex-direction: column;
-    background-color: #fdf2f7;
+   /*background-color: #fdf2f7;*/
+    background-color: rgb(147, 192, 221);
     margin: 10px;
     padding: 30px 30px;
 }
