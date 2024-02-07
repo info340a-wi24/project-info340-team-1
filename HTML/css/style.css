@@ -1,0 +1,134 @@
+
+* {
+    font-family: 'Arial', Times, serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+body .form  {
+    background-color: rgb(147, 192, 221);
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    /*background-color: #fff5ff;*/
+    background-color: #0f184f;
+    align-items: center;
+    padding: 20px 50px;
+    box-shadow: 0 1px 8px #ddd;
+}
+
+#nav-title {
+    margin-right: auto;
+    font-size: 1.5em;
+}
+
+header li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+header a {
+    /*color: #4ec780;*/
+    color: white;
+    text-decoration-line: none;
+}
+
+.container {
+    display: flex;
+    /*background-color: #fce3f1;*/
+    background-color: #ffffff;
+    height: inherit;
+}
+
+.tracker {
+    width: 50%;
+    flex: 1;
+    flex-direction: column;
+    /*background-color: #fdf2f7;*/
+    background-color: rgb(147, 192, 221);
+    margin: 10px;
+    padding: 30px 30px;
+    flex-wrap: wrap;
+}
+
+.tracker:first-child {
+    margin-right: 20px;
+}
+
+.head {
+    padding: 0 10px;
+}
+
+.tracker ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    background-color: #fdfdfd;
+    width: 90%;
+  }
+  
+  .tracker li a {
+    display: block;
+    color: #000;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid gainsboro;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: #95e281;
+    color: white;
+  }
+
+  .symptom img {
+    height: 20px;
+    padding: 10px 20px;
+    float: right;
+  }
+
+.quick-links {
+    flex: 1;
+    flex-direction: column;
+    background-color: #fdf2f7;
+    margin: 10px;
+    padding: 30px 30px;
+}
+
+.heading {
+    display: block;
+    padding: 0 10px;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.link {
+    flex: 0 0 250px;
+    background-color: white;
+    margin: .5rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+}
+
+.link a {
+    text-decoration-line: none;
+}
+
+.link img {
+    width: 100%;
+}
+
