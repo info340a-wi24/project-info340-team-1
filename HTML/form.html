@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Info 340 team">
+    <meta name="description" content="A simple form for collecting user data">
+    <link rel="icon" 
+      type="image/png" 
+      href="http://example.com/myicon.png">
+    <title>Symptom Form</title>
+</head>
+<body>
+    <header>
+        <nav>
+                <a href="#home">Home</a>
+                <a href="#about">Calendar</a>
+                <a href="#services">Data Visualization</a>
+                <a href="#contact">New Form</a>
+        </nav>
+    </header>   
+
+    <main>
+        <section>
+            <header>
+                <h1>Symptom Form</h1>
+                <p>Fill out this form with symptoms you are feeling!</p>
+            </header>
+        </section>
+        <section>
+            <form>
+                <div>
+                    <label for="date">Date:</label>
+                    <div><input type="date" class="form-control" name="date" id="date_field"></div>
+                </div>
+                <div>
+                    <label for="duration">Duration:</label>
+                    <select class="form-control" name="duration" id="duration_field">
+                        <option value="3-4">3-4 days</option>
+                        <option value="1-2">1-2 weeks</option>
+                        <option value="1-2 months">1-2 months</option>
+                        <option value="many months">A couple of months</option>
+                        <option value="more">More than that</option>
+                    </select>
+                <div>
+                    <label for="symptoms_field">Describe Your Symptoms:</label>
+                    <p>Write down how you feel and be as specific as possible!</p>
+                    <div><textarea class="form-control" name="symptom" id="symptom_field"></textarea></div>
+                </div>
+                <div>
+                    <label>
+                        <input type="radio" name="pain" value="1"> No Pain
+                    </label>
+                    <label>
+                        <input type="radio" name="pain" value="2"> Mild Pain
+                    </label>
+                    <label>
+                        <input type="radio" name="pain" value="3"> Moderate Pain
+                    </label>
+                    <label>
+                        <input type="radio" name="pain" value="4"> Severe Pain
+                    </label>
+                    <label>
+                        <input type="radio" name="pain" value="5"> Very Severe Pain
+                    </label>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <!-- Author Info -->
+        <p>This page was created by our Info 340 team</p>
+        <p>&copy; 2023 SymptoTrack.</p>
+      </footer>
+    
+</body>
+</html>
