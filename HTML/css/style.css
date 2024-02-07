@@ -137,3 +137,99 @@ header a {
     width: 100%;
 }
 
+/* The style setting for Calendar page -Edrick*/
+#calendar-page {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#Calendar {
+    width: 70%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-right: 50px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#two-view {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+
+#Calendar h2 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#calendar-table {
+    width: 100%;
+}
+
+#calendar-table th, #calendar-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid lightgray;
+}
+
+#calendar-table th {
+    background-color: lightgray;
+    color: black;
+}
+
+#add-appointment {
+    background-color: lightpink;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    height: 310px;
+    border: 2px solid black;
+}
+
+#add-appointment form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="date"], input[type="time"], form textarea {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 50%;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 50%;
+}
+
+button:hover {
+    background-color: gray;
+}
+
+#event-list h3, #add-appointment h3 {
+    margin-top: 0;
+}
+
+#event-list {
+    background-color: lightblue;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
