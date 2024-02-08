@@ -124,7 +124,7 @@ header h1 {
 }
 
 .element{
-    margin: 10px; 
+    margin: 10px;
     padding: 10px;
     font-weight: 700;
     color: black;
@@ -187,7 +187,7 @@ header a {
     background-color: #fdfdfd;
     width: 90%;
   }
-  
+
   .tracker li a {
     display: block;
     color: #000;
@@ -265,7 +265,8 @@ header a {
     flex-direction: column;
     align-items: center;
     margin-bottom: 30px;
-    margin-right: 50px;
+    margin-left: 20px;
+    margin-right: 30px;
     border: 2px solid black;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -298,13 +299,14 @@ header a {
 }
 
 #add-appointment {
-    background-color: lightpink;
-    padding: 20px;
+    margin-right: 20px;
     border-radius: 5px;
+    background-color: #f9f9f9;
+    padding: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     width: 30%;
     height: 310px;
-    border: 2px solid black;
+    border: 1px solid #ccc;
 }
 
 #add-appointment form {
