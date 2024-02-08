@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SymptoTracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Main content styles */
+    .graph-container {
+        width: 80%;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        overflow: auto; /* Clear the float */
+        box-sizing: border-box;
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 15px;
+        margin: 10px auto; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: calc(100% - 20px);
+    }
+
+    .card h2 {
+        color: #333;
+        margin-bottom: 15px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .chart {
+       width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .chart img {
+        max-width: 100%;
+        height: auto;
+        max-width: 600px;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .graph-container {
+        width: 95%; /* Increase width on smaller screens */
+      }
+
+      .card {
+        width: calc(100% - 20px); /* Adjust width for smaller screens */
+      }
+
+      nav ul li {
+        float: none;
+        display: block; /* Stack nav items vertically */
+        text-align: center; /* Center-align nav items */
+      }
+
+      .card h2 {
+        font-size: 1.5em; /* Increase font size for better readability */
+      }
+    }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 id="nav-title">SymptoTracker</h1>
+        <nav>
+            <ul>
+                <li><a class="active" href="../index.html">Home</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="graphs.html">Data Visualization</a></li>
+                <li><a href="form.html">Form</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="Graph-pages">
+      <div class="graph-container">
+          <!-- line -->
+          <div class="card">
+              <h2>Line Chart</h2>
+              <p>This line chart displays the frequency of symptoms reported each month, which helps in tracking symptom patterns and trends over time.</p>
+              <div id="lineGraph" class="chart">
+                  <img src="../img/lineChart.png" alt="Line Chart showing symptoms per month">
+              </div>
+          </div>
+      
+          <!-- pie -->
+          <div class="card">
+              <h2>Pie Chart</h2>
+              <p>The pie chart depicts the proportion of each symptom reported, providing a visual comparison of their relative frequencies.</p>
+              <div id="pieChart" class="chart">
+                  <img src="../img/pieChart.png" alt="Pie Chart showing the distribution of symptoms">
+              </div>
+          </div>
+      </div>
+    </main>
+</body>
+</html>
