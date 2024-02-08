@@ -7,32 +7,139 @@ html {
     height: 100%;
 }
 
-body {
-    box-sizing: border-box;
-}
 
-body .form  {
-    background-color: rgb(147, 192, 221);
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-    display: flex;
-    justify-content: flex-end;
-    /*background-color: #fff5ff;*/
     background-color: #0f184f;
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    box-shadow: 0 1px 8px #ddd;
+}
+
+#nav-title {
+    margin: 0;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav ul li {
+    display: inline;
+}
+
+.nav ul li:not(:last-child) {
+    margin-right: 20px;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav ul li a.active {
+    color: #4ec780;
+}
+
+.nav ul li a:hover {
+    color: #4ec780;
+}
+
+.container-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-section {
+    width: 100%;
+    max-width: 600px;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-header {
+    text-align: center;
+}
+
+.form-container {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-text {
+    height: 100px;
+}
+
+.btn-primary {
+    background-color: #4ec780;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+}
+
+.footer {
+    background-color: #0f184f;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
 header h1 {
     color: white;
 }
 
+.element{
+    margin: 10px; 
+    padding: 10px;
+    font-weight: 700;
+    color: black;
+}
+
+#sub-heading {
+    font-size: small;
+}
+
+
 #nav-title {
     margin-right: auto;
     font-size: 1.5em;
 }
+
 
 header li {
     list-style: none;
@@ -98,6 +205,12 @@ header a {
   .symptom img {
     height: 20px;
     padding: 10px 20px;
+    float: right;
+  }
+
+  #head-img {
+    height: 20px;
+    padding: 10px 30px 30px 20px;
     float: right;
   }
 
