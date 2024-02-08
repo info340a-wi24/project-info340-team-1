@@ -124,7 +124,7 @@ header h1 {
 }
 
 .element{
-    margin: 10px; 
+    margin: 10px;
     padding: 10px;
     font-weight: 700;
     color: black;
@@ -187,7 +187,7 @@ header a {
     background-color: #fdfdfd;
     width: 90%;
   }
-  
+
   .tracker li a {
     display: block;
     color: #000;
