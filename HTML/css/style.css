@@ -49,11 +49,11 @@ header {
 }
 
 .nav ul li a.active {
-    color: #4ec780;
+    color: rgb(147, 192, 221);
 }
 
 .nav ul li a:hover {
-    color: #4ec780;
+    color: rgb(147, 192, 221)
 }
 
 .container-form {
@@ -102,7 +102,7 @@ header {
 }
 
 .btn-primary {
-    background-color: #4ec780;
+    background-color: rgb(147, 192, 221);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -111,7 +111,7 @@ header {
 }
 
 .btn-primary:hover {
-    background-color: #45a049;
+    background-color: rgb(147, 192, 221);
 }
 
 .footer {
@@ -157,28 +157,31 @@ header a {
 
 .container {
     display: flex;
-    /*background-color: #fce3f1;*/
+    padding: 30px 30px;
     background-color: #ffffff;
-    height: inherit;
+    height: 100%;
 }
 
 .tracker {
     width: 50%;
     flex: 1;
     flex-direction: column;
-    /*background-color: #fdf2f7;*/
-    background-color: rgb(147, 192, 221);
+    background-color: #f9f9f9;
     margin: 10px;
     padding: 30px 30px;
     flex-wrap: wrap;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .tracker:first-child {
-    margin-right: 20px;
+    margin-right: 30px;
 }
 
 .head {
-    padding: 0 10px;
+    width: 100%;
+    padding: 10px 10px 20px 10px;
 }
 
 .tracker ul {
@@ -188,20 +191,31 @@ header a {
     width: 200px;
     background-color: #fdfdfd;
     width: 90%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
   }
 
-  .tracker li a {
+  .tracker li {
     display: block;
     color: #000;
     margin: 10px;
     padding: 10px;
-    border: 2px solid gainsboro;
+    border: 1px solid black;
     text-decoration: none;
   }
 
-  li a:hover {
-    background-color: #95e281;
+  li:hover {
+    background-color: rgb(147, 192, 221);
     color: white;
+  }
+
+  .symptom input {
+    size: 3px;
+  }
+
+  .symptom_link {
+    text-decoration-line: none;
+    color: black;
   }
 
   .symptom img {
@@ -209,6 +223,21 @@ header a {
     padding: 10px 20px;
     float: right;
   }
+
+  button {
+    display: inline-block;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+    width: 30px;
+}
+
+#close-image img {
+    display: block;
+    height: 50px;  
+    width: 50px;
+}
 
   #head-img {
     height: 20px;
@@ -219,21 +248,18 @@ header a {
 .quick-links {
     flex: 1;
     flex-direction: column;
-   /*background-color: #fdf2f7;*/
-    background-color: rgb(147, 192, 221);
+    background-color: #f9f9f9;
     margin: 10px;
     padding: 30px 30px;
-}
-
-.heading {
-    display: block;
-    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .links {
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: center;
 }
 
 .link {
@@ -246,10 +272,12 @@ header a {
 
 .link a {
     text-decoration-line: none;
+    color: #0018b4;
 }
 
 .link img {
     width: 100%;
+    border-radius: 10px;
 }
 
 /* The style setting for Calendar page -Edrick*/
