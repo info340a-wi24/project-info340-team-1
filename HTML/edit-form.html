@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Symptom Form</title>
+    <title>Edit Symptom Form</title>
     <link rel="icon" type="image/png" href="../img/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -14,10 +14,10 @@
         <h1 id="nav-title">SymptoTracker</h1>
         <nav class="nav">
             <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="calendar.html">Calendar</a></li>
-                <li><a href="graphs.html">Data Visualization</a></li>
-                <li><a href="form.html" class="active">Form</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="HTML/calendar.html">Calendar</a></li>
+                <li><a href="HTML/graphs.html">Data Visualization</a></li>
+                <li><a href="HTML/form.html" class="active">Form</a></li>
             </ul>
         </nav>
     </header>
@@ -28,14 +28,14 @@
                 <form>
                     <div class="form-group">
                         <label for="date">Date:</label>
-                        <input type="date" class="form-control" name="date" id="date_field">
+                        <input type="date" class="form-control" name="date" id="date_field" value="2024-02-06">
                     </div>
                     <div class="form-group">
                         <label for="duration">Duration:</label>
                         <select class="form-control" name="duration" id="duration_field">
                             <option value="" disabled selected>Select duration</option>
                             <option value="3-4">3-4 days</option>
-                            <option value="1-2">1-2 weeks</option>
+                            <option value="1-2" selected>1-2 weeks</option>
                             <option value="1-2 months">1-2 months</option>
                             <option value="many months">A couple of months</option>
                             <option value="more">More than that</option>
@@ -43,12 +43,13 @@
                     </div>
                     <div class="form-group">
                         <label for="symptoms_field">Describe Your Symptoms:</label>
-                        <textarea class="form-control form-text" name="symptom" id="symptom_field" rows="5"></textarea>
+                        <textarea class="form-control form-text" name="symptom" id="symptom_field" rows="5">I have been feeling very dizzy recently, the feeling happens a lot when I stand up and I don't know why. It makes getting up in the mornings very hard, I have been taking tylenol for it. 
+                        </textarea>
                     </div>
                     <div class="form-group">
                     <label for="pain">Rate your pain:</label><br>
                         <input type="radio" name="pain" value="1"> No Pain<br>
-                        <input type="radio" name="pain" value="2"> Mild Pain<br>
+                        <input type="radio" name="pain" value="2" checked> Mild Pain<br>
                         <input type="radio" name="pain" value="3"> Moderate Pain<br>
                         <input type="radio" name="pain" value="4"> Severe Pain<br>
                         <input type="radio" name="pain" value="5"> Very Severe Pain<br>
