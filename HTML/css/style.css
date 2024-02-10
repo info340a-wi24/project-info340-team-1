@@ -447,4 +447,27 @@ button:hover {
     .card h2 {
         font-size: 1.5em; /* Increase font size for better readability */
     }
+
+    .container-form {
+        padding: 10px 20px; /* Add padding to form */
+    }
+
+    #hamburger-menu{
+        display: block;
+    }
+    
+    #social-links{
+        display: none;
+    }
+
+}
+
+@media (min-width: 598px) {
+    #hamburger-menu{
+        display: none;
+    }
+    
+    #nav-links{
+        display: block;
+    }
 }
