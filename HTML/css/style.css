@@ -436,7 +436,7 @@ button:hover {
         width: calc(100% - 20px); /* Adjust width for smaller screens */
     }
 
-    nav ul li {
+    .nav ul li {
         float: none;
         display: block; /* Stack nav items vertically */
         text-align: center; /* Center-align nav items */
