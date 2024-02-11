@@ -220,11 +220,6 @@ header a {
     color: black;
   }
 
-  .symptom img {
-    height: 20px;
-    padding: 10px 20px;
-    float: right;
-  }
 
   button {
     display: inline-block;
@@ -233,12 +228,6 @@ header a {
     margin: 0;
     vertical-align: top;
     width: 30px;
-}
-
-#close-image img {
-    display: block;
-    height: 50px;  
-    width: 50px;
 }
 
   #head-img {
@@ -427,6 +416,47 @@ button:hover {
     height: auto;
     max-width: 600px;
 }
+
+
+.symptom li, .symptom-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ #close-image {
+    background: transparent;
+    border: none;
+}
+
+.symptom img {
+    height: 25px;
+    width: 25px;
+    /* border-radius: 50%; */
+}
+
+.symptom-button {
+    gap: 8px;
+}
+
+.head, .filter {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.head img {
+    height: 28px;
+    width: 28px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+#filter-image{
+    background: transparent;
+    border: none;
+}
+
 
 /* Responsive design */
 @media (max-width: 768px) {
