@@ -326,7 +326,7 @@ header a {
     padding: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     width: 30%;
-    height: 310px;
+    height: auto;
     border: 1px solid #ccc;
 }
 
@@ -380,7 +380,7 @@ button:hover {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
-    overflow: auto; /* Clear the float */
+    overflow: auto;
     box-sizing: border-box;
 }
 
@@ -390,7 +390,7 @@ button:hover {
     background-color: #fff;
     border-radius: 5px;
     padding: 15px;
-    margin: 10px auto; 
+    margin: 10px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -432,7 +432,6 @@ button:hover {
 .symptom img {
     height: 25px;
     width: 25px;
-    /* border-radius: 50%; */
 }
 
 .symptom-button {
@@ -461,31 +460,31 @@ button:hover {
 /* Responsive design */
 @media (max-width: 768px) {
     .graph-container {
-        width: 95%; /* Increase width on smaller screens */
+        width: 95%;
     }
 
     .graph-card {
-        width: calc(100% - 20px); /* Adjust width for smaller screens */
+        width: calc(100% - 20px);
     }
 
     .nav ul li {
         float: none;
-        display: block; /* Stack nav items vertically */
-        text-align: center; /* Center-align nav items */
+        display: block;
+        text-align: center;
     }
 
     .card h2 {
-        font-size: 1.5em; /* Increase font size for better readability */
+        font-size: 1.5em;
     }
 
     .container-form {
-        padding: 10px 20px; /* Add padding to form */
+        padding: 10px 20px;
     }
 
     #hamburger-menu{
         display: block;
     }
-    
+
     #social-links{
         display: none;
     }
@@ -496,7 +495,7 @@ button:hover {
     #hamburger-menu{
         display: none;
     }
-    
+
     #nav-links{
         display: block;
     }
