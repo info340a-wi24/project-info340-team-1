@@ -220,11 +220,6 @@ header a {
     color: black;
   }
 
-  .symptom img {
-    height: 20px;
-    padding: 10px 20px;
-    float: right;
-  }
 
   button {
     display: inline-block;
@@ -233,12 +228,6 @@ header a {
     margin: 0;
     vertical-align: top;
     width: 30px;
-}
-
-#close-image img {
-    display: block;
-    height: 50px;  
-    width: 50px;
 }
 
   #head-img {
@@ -428,6 +417,47 @@ button:hover {
     max-width: 600px;
 }
 
+
+.symptom li, .symptom-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ #close-image {
+    background: transparent;
+    border: none;
+}
+
+.symptom img {
+    height: 25px;
+    width: 25px;
+    /* border-radius: 50%; */
+}
+
+.symptom-button {
+    gap: 8px;
+}
+
+.head, .filter {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.head img {
+    height: 28px;
+    width: 28px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+#filter-image{
+    background: transparent;
+    border: none;
+}
+
+
 /* Responsive design */
 @media (max-width: 768px) {
     .graph-container {
@@ -446,5 +476,28 @@ button:hover {
 
     .card h2 {
         font-size: 1.5em; /* Increase font size for better readability */
+    }
+
+    .container-form {
+        padding: 10px 20px; /* Add padding to form */
+    }
+
+    #hamburger-menu{
+        display: block;
+    }
+    
+    #social-links{
+        display: none;
+    }
+
+}
+
+@media (min-width: 598px) {
+    #hamburger-menu{
+        display: none;
+    }
+    
+    #nav-links{
+        display: block;
     }
 }
