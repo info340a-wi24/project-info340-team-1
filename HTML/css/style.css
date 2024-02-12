@@ -8,9 +8,7 @@ html {
     height: 100vh;
 }
 
-
 body {
-    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -40,6 +38,7 @@ header {
 
 .nav ul li {
     display: inline;
+    border-radius: 5px;
 }
 
 .nav ul li:not(:last-child) {
@@ -126,10 +125,6 @@ header {
     padding: 20px;
 }
 
-header h1 {
-    color: white;
-}
-
 .element{
     margin: 10px;
     padding: 10px;
@@ -141,12 +136,10 @@ header h1 {
     font-size: small;
 }
 
-
 #nav-title {
     margin-right: auto;
     font-size: 1.5em;
 }
-
 
 header li {
     list-style: none;
@@ -248,6 +241,7 @@ header a {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+
 .links {
     display: flex;
     flex-wrap: wrap;
@@ -264,7 +258,7 @@ header a {
 
 .link a {
     text-decoration-line: none;
-    color: #0018b4;
+    color: #3548c1;
 }
 
 .link img {
