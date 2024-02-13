@@ -235,14 +235,14 @@ header a {
 }
 
 
-.links {
+.link-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .link {
-    flex: 0 0 250px;
+    flex: 0 15em;
     background-color: white;
     margin: .5rem;
     border-radius: 10px;
@@ -403,7 +403,6 @@ button:hover {
 .graph-chart img {
     max-width: 100%;
     height: auto;
-    max-width: 600px;
 }
 
 
@@ -448,9 +447,9 @@ button:hover {
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .link {
+    /* .link {
         flex: 0 0 100px;
-    }
+    } */
     .graph-container {
         width: 95%;
     }
@@ -477,7 +476,7 @@ button:hover {
         display: block;
     }
 
-    #social-links{
+    #nav-links{
         display: none;
     }
 
