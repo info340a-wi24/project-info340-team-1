@@ -39,7 +39,7 @@ header {
     border-radius: 5px;
 }
 
-nav ul li:not(:last-child) {
+.nav ul li:not(:last-child) {
     margin-right: 20px;
 }
 
@@ -447,9 +447,7 @@ button:hover {
 
 /* Responsive design */
 @media (max-width: 768px) {
-    /* .link {
-        flex: 0 0 100px;
-    } */
+    
     .graph-container {
         width: 95%;
     }
@@ -489,5 +487,13 @@ button:hover {
 
     #nav-links{
         display: block;
+    }
+
+}
+
+@media (min-width: 756px) {
+
+    .link {
+        flex: 0 13em;
     }
 }
