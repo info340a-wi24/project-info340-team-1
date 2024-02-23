@@ -1,5 +1,5 @@
 import React from 'react';
-import '../html/css/style.css'; 
+import './css/style.css'; 
 
 export function SymptomForm() {
     return(
