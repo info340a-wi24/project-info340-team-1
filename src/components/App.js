@@ -1,6 +1,24 @@
 import React, { useState } from 'react'; //import React Component
+import Form from './form';
 import Calendar from './calendar';
+import Graph from './graph';
 import '../style.css';
+
+export const header = (
+    <header className="header">
+        <h1 id="nav-title">SymptoTracker</h1>
+        <nav className="nav">
+            <div id="hamburger-menu"><a href="#"><i class="fa fa-bars" aria-label="menu"></i></a></div>
+            <ul id="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="graphs.html">Data Visualization</a></li>
+                <li><a href="form.html">Form</a></li>
+            </ul>
+        </nav>
+    </header>
+);
+
 function App(props) {
     return (
         <main id="main_page">
