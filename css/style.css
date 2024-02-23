@@ -1,4 +1,3 @@
-
 * {
     font-family: 'Arial', Times, serif;
 }
@@ -7,9 +6,7 @@ html {
     height: 100vh;
 }
 
-
 body {
-    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -39,6 +36,7 @@ header {
 
 .nav ul li {
     display: inline;
+    border-radius: 5px;
 }
 
 .nav ul li:not(:last-child) {
@@ -125,10 +123,6 @@ header {
     padding: 20px;
 }
 
-header h1 {
-    color: white;
-}
-
 .element{
     margin: 10px;
     padding: 10px;
@@ -140,16 +134,13 @@ header h1 {
     font-size: small;
 }
 
-
 #nav-title {
     margin-right: auto;
     font-size: 1.5em;
 }
 
-
-header li {
+.header .li {
     list-style: none;
-    display: inline-block;
     padding: 0 20px;
 }
 
@@ -160,7 +151,8 @@ header a {
 
 .container {
     display: flex;
-    padding: 30px 30px;
+    padding: 2rem 0rem;
+    width: 100%;
     background-color: #ffffff;
 }
 
@@ -169,8 +161,8 @@ header a {
     flex: 1;
     flex-direction: column;
     background-color: #f9f9f9;
-    margin: 10px;
-    padding: 30px 30px;
+    margin: 1em;
+    padding: 1em;
     flex-wrap: wrap;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -178,19 +170,19 @@ header a {
 }
 
 .tracker:first-child {
-    margin-right: 30px;
+    margin-right: 2rem;
 }
 
 .head {
     width: 100%;
-    padding: 10px 10px 20px 10px;
+    padding: 1em;
 }
 
 .tracker ul {
     list-style-type: none;
-    margin: 10px;
-    padding: 10px;
-    width: 200px;
+    margin: 1em;
+    padding: 1em;
+    width: 2rem;
     background-color: #fdfdfd;
     width: 90%;
     border-radius: 5px;
@@ -200,8 +192,8 @@ header a {
   .tracker li {
     display: block;
     color: #000;
-    margin: 10px;
-    padding: 10px;
+    margin: .5em;
+    padding: .5em;
     border: 1px solid black;
     text-decoration: none;
   }
@@ -212,7 +204,7 @@ header a {
   }
 
   .symptom input {
-    size: 3px;
+    size: .5em;
   }
 
   .symptom_link {
@@ -223,38 +215,34 @@ header a {
 
   button {
     display: inline-block;
-    height: 30px;
+    height: 2em;
     padding: 0;
     margin: 0;
     vertical-align: top;
-    width: 30px;
+    width: 2em;
 }
 
-  #head-img {
-    height: 20px;
-    padding: 10px 30px 30px 20px;
-    float: right;
-  }
-
 .quick-links {
+    width: 50%;
     flex: 1;
     flex-direction: column;
     background-color: #f9f9f9;
-    margin: 10px;
-    padding: 30px 30px;
+    margin: 1em;
+    padding: 1em;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.links {
+
+.link-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .link {
-    flex: 0 0 250px;
+    flex: 0 15em;
     background-color: white;
     margin: .5rem;
     border-radius: 10px;
@@ -263,7 +251,7 @@ header a {
 
 .link a {
     text-decoration-line: none;
-    color: #0018b4;
+    color: #3548c1;
 }
 
 .link img {
@@ -278,6 +266,7 @@ header a {
     margin-left: 10px;
     margin-right: 10px;
 }
+
 
 #Calendar {
     width: 70%;
@@ -326,7 +315,7 @@ header a {
     padding: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     width: 30%;
-    height: 310px;
+    height: auto;
     border: 1px solid #ccc;
 }
 
@@ -380,7 +369,7 @@ button:hover {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
-    overflow: auto; /* Clear the float */
+    overflow: auto;
     box-sizing: border-box;
 }
 
@@ -390,7 +379,7 @@ button:hover {
     background-color: #fff;
     border-radius: 5px;
     padding: 15px;
-    margin: 10px auto; 
+    margin: 10px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -414,7 +403,6 @@ button:hover {
 .graph-chart img {
     max-width: 100%;
     height: auto;
-    max-width: 600px;
 }
 
 
@@ -432,7 +420,6 @@ button:hover {
 .symptom img {
     height: 25px;
     width: 25px;
-    /* border-radius: 50%; */
 }
 
 .symptom-button {
@@ -460,33 +447,34 @@ button:hover {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    
     .graph-container {
-        width: 95%; /* Increase width on smaller screens */
+        width: 95%;
     }
 
     .graph-card {
-        width: calc(100% - 20px); /* Adjust width for smaller screens */
+        width: calc(100% - 20px);
     }
 
     .nav ul li {
         float: none;
-        display: block; /* Stack nav items vertically */
-        text-align: center; /* Center-align nav items */
+        display: block;
+        text-align: center;
     }
 
     .card h2 {
-        font-size: 1.5em; /* Increase font size for better readability */
+        font-size: 1.5em;
     }
 
     .container-form {
-        padding: 10px 20px; /* Add padding to form */
+        padding: 10px 20px;
     }
 
     #hamburger-menu{
         display: block;
     }
-    
-    #social-links{
+
+    #nav-links{
         display: none;
     }
 
@@ -496,8 +484,16 @@ button:hover {
     #hamburger-menu{
         display: none;
     }
-    
+
     #nav-links{
         display: block;
+    }
+
+}
+
+@media (min-width: 756px) {
+
+    .link {
+        flex: 0 13em;
     }
 }
