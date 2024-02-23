@@ -12,7 +12,7 @@ const Calendar = () => {
         <div className="two-view">
             <div className="Calendar">
                 {/* Calendar Table */}
-                <h2>{`${currentMonth} ${currentYear}`}</h2>
+                <h2>{/* Month */}</h2>
                 <br />
                 <table className="calendar-table">
                     {/* Table Header */}
