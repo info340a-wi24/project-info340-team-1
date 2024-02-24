@@ -1,5 +1,6 @@
 import React from 'react';
 import '../style.css';
+import {SymptomForm} from '.form';
 
 export function Home (props) {
     return (
