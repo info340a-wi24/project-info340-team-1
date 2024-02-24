@@ -16,25 +16,25 @@ function GraphCard({ title, description, imgSrc, altText }) {
   );
 }
 
-function Graphs() {
+export function Graphs() {
   return (
-    <main id="Graph-pages">
-      <div className="graph-container">
-        <GraphCard
-          title="Line Chart"
-          description="This line chart displays the frequency of symptoms reported each month, which helps in tracking symptom patterns and trends over time."
-          imgSrc={LineChartImg}
-          altText="Line Chart showing symptoms per month"
-        />
-        <GraphCard
-          title="Pie Chart"
-          description="The pie chart depicts the proportion of each symptom reported, providing a visual comparison of their relative frequencies."
-          imgSrc={PieChartImg}
-          altText="Pie Chart showing the distribution of symptoms"
-        />
-      </div>
-    </main>
+      <div>
+      <main id="Graph-pages">
+        <div className="graph-container">
+          <GraphCard
+            title="Line Chart"
+            description="This line chart displays the frequency of symptoms reported each month, which helps in tracking symptom patterns and trends over time."
+            imgSrc={LineChartImg}
+            altText="Line Chart showing symptoms per month"
+          />
+          <GraphCard
+            title="Pie Chart"
+            description="The pie chart depicts the proportion of each symptom reported, providing a visual comparison of their relative frequencies."
+            imgSrc={PieChartImg}
+            altText="Pie Chart showing the distribution of symptoms"
+          />
+        </div>
+      </main>
+    </div>
   );
 }
-
-export default Graphs;
