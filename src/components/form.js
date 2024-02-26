@@ -9,14 +9,9 @@ export function SymptomForm({onSubmit}) {
         pain: ''
     });
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
     const handleSubmit = (e) => {
         e.preventDefault();
         onSubmit(formData);
-        // Clear form fields after submission if needed
         setFormData({
             date: '',
             duration: '',
