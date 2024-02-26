@@ -17,16 +17,23 @@ export function Header() {
 };
 
 function App(props) {
+    const [symptoms, setSymptoms] = useState([]);
+
+    const handleFormSubmit = (newSymptom) => {
+        setSymptoms(prevSymptoms => [...prevSymptoms, newSymptom]);
+    };
+
     return (
         <div>
             <Header />
             <Routes>
-                <Route path = "/form" element = {<SymptomForm />} />
+                <Route path = "/form" element = {<SymptomForm onFormSubmit={handleFormSubmit}/>} />
                 <Route path="/graph" element={<Graphs />} />
                 <Route path="/calendar" element={<Calendar />} />
-                <Route path= "*" element= {<Home />} />
+                <Route path= "*" element= {<Home symptoms={symptoms}/>} />
             </Routes>
         </div>
+    
     );
 };
 export default App;

@@ -4,21 +4,30 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-export function SymptomForm() {
+export function SymptomForm({ onFormSubmit }) {
 
     const navigate = useNavigate(); //access navigate function
     const [title, setTitle] = useState('');
-    useEffect(() => {
-        // Use the updated title value
-        if (title) {
-          navigate("/home", { state: { title } });
-        }
-      }, [title, navigate]);
+    // useEffect(() => {
+    //     // Use the updated title value
+    //     if (title) {
+    //       navigate("/home", { state: { title } });
+    //     }
+    //   }, [title, navigate]);
     
-    const handleSubmit = function(event) {
+    // const handleSubmit = function(event) {
+    //     event.preventDefault();
+    //     setTitle(event.target.elements.title.value);
+    // }
+    const handleSubmit = function (event) {
         event.preventDefault();
-        setTitle(event.target.elements.title.value);
-    }
+        const newTitle = event.target.elements.title.value;
+        
+        setTitle(newTitle);
+        onFormSubmit(newTitle);
+        navigate("/home", { state: { title: newTitle } });
+      };
+      
 
     return(
         <div>
@@ -26,7 +35,7 @@ export function SymptomForm() {
                 <section className="form-section">
                     <h2 className="form-header">Symptom Form</h2>
                     <div className="form-container">
-                        <form  onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit}>
                             <div className="form-group">
                                 <label htmlFor="title">Symptom Title:</label>
                                 <input type="text" className="form-title-control" name="title" id="symptom_title" />
