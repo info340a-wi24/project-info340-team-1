@@ -10,7 +10,6 @@ import webMDImg from '../img/webMD.png';
 import seaHealthImg from '../img/seattleHealth.png'; 
 
 
-
 function deleteButton(event) {
     const symptomElement = event.target.closest('.symptom');
     if (symptomElement) {
@@ -37,11 +36,8 @@ export function Home (props) {
                                     <li>
                                         <a className="symptom_link" href="Chest Pain">Chest Pain</a>
                                         <div className="symptom-button">
-                                            <a className="edit-btn" href={SymptomForm}>
-                                                <button className="edit-icon" onclick="editPage(event)">
-                                                    <img src={editImg} alt="Edit Icon"/>
-                                                </button>
-                                            </a>
+                                        {/* <a href="Users/meiyo/Downloads/info340-code/project-info340-team-1/project-draft/HTML/edit-form.html" target="_blank"><img src={editImg} alt="Edit Icon"/></a> */}
+                                        <a href={SymptomForm} target="_blank"><img src={editImg} alt="Edit Icon"/></a>
                                             <button className="trash-icon" onClick={deleteButton}>
                                                 <img src={trashImg} alt="Trash Icon"/>
                                             </button>
