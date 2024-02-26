@@ -6,6 +6,7 @@ import {Calendar} from './calendar';
 import {Graphs} from './graph';
 import {Nav} from './Nav';
 import{Home} from './home';
+import { EditForm } from './editForm';
 
 export function Header() {
     return(
@@ -22,6 +23,7 @@ function App(props) {
             <Header />
             <Routes>
                 <Route path = "/form" element = {<SymptomForm />} />
+                <Route path="/edit-form" element={<EditForm />} />
                 <Route path="/graph" element={<Graphs />} />
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path= "*" element= {<Home />} />

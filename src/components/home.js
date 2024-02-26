@@ -1,6 +1,7 @@
 import React from 'react';
 import '../style.css';
 import {SymptomForm} from './form';
+import {EditForm} from './editForm';
 import filterImg from '../img/filter.png';
 import editImg from '../img/edit.png'; 
 import trashImg from '../img/trash.png';
@@ -36,8 +37,7 @@ export function Home (props) {
                                     <li>
                                         <a className="symptom_link" href="Chest Pain">Chest Pain</a>
                                         <div className="symptom-button">
-                                        {/* <a href="Users/meiyo/Downloads/info340-code/project-info340-team-1/project-draft/HTML/edit-form.html" target="_blank"><img src={editImg} alt="Edit Icon"/></a> */}
-                                        <a href={SymptomForm} target="_blank"><img src={editImg} alt="Edit Icon"/></a>
+                                        <a href = "/edit-form" target="_blank"><img src={editImg} alt="Edit Icon"/></a>
                                             <button className="trash-icon" onClick={deleteButton}>
                                                 <img src={trashImg} alt="Trash Icon"/>
                                             </button>
@@ -48,11 +48,7 @@ export function Home (props) {
                                     <li>
                                         <a className="symptom_link" href="Runny Nose">Runny Nose</a>
                                         <div className="symptom-button">
-                                            <a className="edit-btn" href="edit-form.html">
-                                                <button className="edit-icon" onclick="editPage(event)">
-                                                    <img src={editImg} alt="Edit Icon"/>
-                                                </button>
-                                            </a>
+                                        <a href = "/edit-form" target="_blank"><img src={editImg} alt="Edit Icon"/></a>
                                             <button className="trash-icon" onClick={deleteButton}>
                                                 <img src={trashImg} alt="Trash Icon"/>
                                             </button>
@@ -63,11 +59,7 @@ export function Home (props) {
                                     <li>
                                         <a className="symptom_link" href="Hives Flare Again">Hives Flare Again</a>
                                         <div className="symptom-button">
-                                            <a className="edit-btn" href="edit-form.html">
-                                                <button className="edit-icon" onclick="editPage(event)">
-                                                    <img src={editImg} alt="Edit Icon"/>
-                                                </button>
-                                            </a>
+                                        <a href = "/edit-form" target="_blank"><img src={editImg} alt="Edit Icon"/></a>
                                             <button className="trash-icon" onClick={deleteButton}>
                                                 <img src={trashImg} alt="Trash Icon"/>
                                             </button>
@@ -78,11 +70,7 @@ export function Home (props) {
                                     <li>
                                         <a className="symptom_link" href="Cough">Cough</a>
                                         <div className="symptom-button">
-                                            <a className="edit-btn" href="edit-form.html">
-                                                <button className="edit-icon" onclick="editPage(event)">
-                                                    <img src={editImg} alt="Edit Icon"/>
-                                                </button>
-                                            </a>
+                                        <a href = "/edit-form" target="_blank"><img src={editImg} alt="Edit Icon"/></a>
                                             <button className="trash-icon" onClick={deleteButton}>
                                                 <img src={trashImg} alt="Trash Icon"/>
                                             </button>
@@ -93,11 +81,7 @@ export function Home (props) {
                                     <li>
                                         <a className="symptom_link" href="Fever">Fever</a>
                                         <div className="symptom-button">
-                                            <a className="edit-btn" href="edit-form.html">
-                                                <button className="edit-icon" onclick="editPage(event)">
-                                                    <img src={editImg} alt="Edit Icon"/>
-                                                </button>
-                                            </a>
+                                        <a href = "/edit-form" target="_blank"><img src={editImg} alt="Edit Icon"/></a>
                                             <button className="trash-icon" onClick={deleteButton}>
                                                 <img src={trashImg} alt="Trash Icon"/>
                                             </button>
@@ -108,11 +92,7 @@ export function Home (props) {
                                     <li>
                                         <a className="symptom_link" href="Hive Flare">Hive Flare</a>
                                         <div className="symptom-button">
-                                            <a className="edit-btn" href="edit-form.html">
-                                                <button className="edit-icon" onclick="editPage(event)">
-                                                    <img src={editImg} alt="Edit Icon"/>
-                                                </button>
-                                            </a>
+                                        <a href = "/edit-form" target="_blank"><img src={editImg} alt="Edit Icon"/></a>
                                             <button className="trash-icon" onClick={deleteButton}>
                                                 <img src={trashImg} alt="Trash Icon"/>
                                             </button>
