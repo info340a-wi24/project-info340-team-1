@@ -43,3 +43,4 @@ export function SymptomForm() {
             </main>
         </div>
     );
+}
