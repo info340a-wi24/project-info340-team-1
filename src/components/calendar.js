@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import '../style.css';
 
-const Calendar = () => {
+export function Calendar() {
   const [appointments, setAppointments] = useState(null);
   const handleAddAppointment = (event) => {
     event.preventDefault();
