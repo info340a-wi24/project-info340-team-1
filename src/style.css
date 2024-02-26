@@ -99,12 +99,19 @@ header {
     border-radius: 5px;
 }
 
+.form-title-control {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    height: 20px;
+}
+
 .form-text {
     height: 100px;
 }
 
 .btn-primary {
-    background-color: rgb(147, 192, 221);
+    background-color: rgb(58, 169, 243);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -113,7 +120,7 @@ header {
 }
 
 .btn-primary:hover {
-    background-color: rgb(147, 192, 221);
+    background-color: rgb(14, 124, 197);
 }
 
 .footer {

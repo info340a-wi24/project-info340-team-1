@@ -1,8 +1,15 @@
 import React from 'react';
 import '../style.css';
 import {SymptomForm} from './form';
+import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 export function Home (props) {
+
+    const location = useLocation();
+    const title = location.state ? location.state.title : null;
+    
     return (
         <div>
             <main id="main_page">
@@ -17,7 +24,7 @@ export function Home (props) {
                             <ul>
                                 <section className="symptom">
                                     <li>
-                                        <a className="symptom_link" href="Chest Pain">Chest Pain</a>
+                                        <Link to="/form" className="symptom_link">{title}</Link>
                                         <div className="symptom-button">
                                             <a className="edit-btn" href="edit-form.html">
                                                 <button id="close-image"><img src="../img/edit.png"/></button>

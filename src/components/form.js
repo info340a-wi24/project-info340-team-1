@@ -1,14 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect }from 'react';
 import '../style.css';
+import { useNavigate } from 'react-router-dom';
+
+
 
 export function SymptomForm() {
+
+    const navigate = useNavigate(); //access navigate function
+    const [title, setTitle] = useState('');
+    useEffect(() => {
+        // Use the updated title value
+        if (title) {
+          navigate("/home", { state: { title } });
+        }
+      }, [title, navigate]);
+    
+    const handleSubmit = function(event) {
+        event.preventDefault();
+        setTitle(event.target.elements.title.value);
+    }
+
     return(
         <div>
             <main className="container-form">
                 <section className="form-section">
                     <h2 className="form-header">Symptom Form</h2>
                     <div className="form-container">
-                        <form>
+                        <form  onSubmit={handleSubmit}>
+                            <div className="form-group">
+                                <label htmlFor="title">Symptom Title:</label>
+                                <input type="text" className="form-title-control" name="title" id="symptom_title" />
+                            </div>
                             <div className="form-group">
                                 <label htmlFor="date">Date:</label>
                                 <input type="date" className="form-control" name="date" id="date_field" />
