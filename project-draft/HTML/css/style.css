@@ -260,7 +260,7 @@ header a {
 }
 
 /* The style setting for Calendar page -Edrick*/
-.calendar-page {
+#calendarPage {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
@@ -282,7 +282,7 @@ header a {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.two-view {
+.twoView {
     display: flex;
     flex-direction: row;
     margin-bottom: 30px;
@@ -293,22 +293,22 @@ header a {
     text-align: center;
 }
 
-.calendar-table {
+.calendarTable {
     width: 100%;
 }
 
-.calendar-table th, #calendar-table td {
+.calendarTable th, .calendarTable td {
     padding: 10px;
     text-align: center;
     border: 1px solid lightgray;
 }
 
-.calendar-table th {
+.calendarTable th {
     background-color: lightgray;
     color: black;
 }
 
-.add-appointment {
+#add-appointment {
     margin-right: 20px;
     border-radius: 5px;
     background-color: #f9f9f9;
@@ -319,12 +319,12 @@ header a {
     border: 1px solid #ccc;
 }
 
-.add-appointment form {
+#add-appointment form {
     display: flex;
     flex-direction: column;
 }
 
-input[type="date"], input[type="time"], form textarea {
+#appointment-date, #appointment-time, #appointment-description {
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -347,7 +347,7 @@ button:hover {
     background-color: gray;
 }
 
-.event-list h3, .add-appointment h3 {
+.event-list h3, #add-appointment h3 {
     margin-top: 0;
 }
 
