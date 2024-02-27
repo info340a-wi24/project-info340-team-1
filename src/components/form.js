@@ -1,14 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../style.css';
 
-export function SymptomForm() {
+export function SymptomForm({onSubmit}) {
+    const [formData, setFormData] = useState({
+        date: '',
+        duration: '',
+        symptom: '',
+        pain: ''
+    });
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        onSubmit(formData);
+        setFormData({
+            date: '',
+            duration: '',
+            symptom: '',
+            pain: ''
+        });
+    };
+
     return(
         <div>
             <main className="container-form">
                 <section className="form-section">
                     <h2 className="form-header">Symptom Form</h2>
                     <div className="form-container">
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <div className="form-group">
                                 <label htmlFor="date">Date:</label>
                                 <input type="date" className="form-control" name="date" id="date_field" />

@@ -18,6 +18,12 @@ export function Header() {
 };
 
 function App(props) {
+    const [symptoms, setSymptoms] = useState([]);
+
+    const addSymptom = (newSymptom) => {
+        setSymptoms([...symptoms, newSymptom]);
+    };
+
     return (
         <div>
             <Header />
