@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../style.css';
+import trashImg from '../img/trash.png';
 
 export function Calendar() {
   const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ export function Calendar() {
   });
 
   const [events, setEvents] = useState([]);
+  const [selectedEvents, setSelectedEvents] = useState([]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -27,6 +29,22 @@ export function Calendar() {
       [name]: value
     });
   };
+
+  const handleCheckboxChange = (index) => {
+    const updatedSelectedEvents = [...selectedEvents];
+    if (updatedSelectedEvents.includes(index)) {
+      updatedSelectedEvents.splice(updatedSelectedEvents.indexOf(index), 1);
+    } else {
+      updatedSelectedEvents.push(index);
+    }
+    setSelectedEvents(updatedSelectedEvents);
+  };
+
+  const handleDeleteSelected = () => {
+    const updatedEvents = events.filter((event, index) => !selectedEvents.includes(index));
+    setEvents(updatedEvents);
+    setSelectedEvents([]);
+  }
 
   return (
     <div id="calendarPage">
@@ -62,22 +80,32 @@ export function Calendar() {
           ></textarea>
           <button type="submit" className="add-button">Add</button>
         </form>
-        <div id="event-list">
-          <h3>Upcoming Events</h3>
-          <ul>
-            {events.length ? (
-              events.map((event, index) => (
-                <li key={index}>
-                  <strong>Date:</strong> {event.date}, <strong>Time:</strong> {event.time}, <strong>Description:</strong>{' '}
-                  {event.description}
-                </li>
-              ))
-            ) : (
-              <li>No events scheduled</li>
-            )}
-          </ul>
-        </div>
       </div>
+      <div className="event-list">
+        <h3>Upcoming Events</h3>
+        <ul>
+          {events.length ? (
+            events.map((event, index) => (
+              <li key={index}>
+                <input
+                  type="checkbox"
+                  checked={selectedEvents.includes(index)}
+                  onChange={() => handleCheckboxChange(index)}
+                />
+                <strong>Date:</strong> {event.date}, <strong>Time:</strong> {event.time}, <strong>Description:</strong>{' '}
+                {event.description}
+              </li>
+            ))
+          ) : (
+            <li>No events scheduled</li>
+          )}
+        </ul>
+        {selectedEvents.length > 0 && (
+          <button onClick={handleDeleteSelected}>
+            <img src={trashImg} alt="Trash Icon"/>
+          </button>
+        )}
+        </div>
     </div>
   );
 };
