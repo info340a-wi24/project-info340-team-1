@@ -18,7 +18,7 @@ export function EditForm() {
                                 <option value="" disabled selected>Select duration</option>
                                 <option value="3-4">3-4 days</option>
                                 <option value="1-2" selected>1-2 weeks</option>
-                                <option value="1-2 months">1-2 months</option>
+                                <option value="1- 2 months">1-2 months</option>
                                 <option value="many months">A couple of months</option>
                                 <option value="more">More than that</option>
                             </select>
