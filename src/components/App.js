@@ -1,7 +1,5 @@
 import React, { useState } from 'react'; //import React Component
 import '../style.css';
-import {Routes, Route} from 'react-router-dom';
-import {SymptomForm} from './form';
 import {Calendar} from './calendar';
 import {Graphs} from './graph';
 import {Nav} from './Nav';
@@ -27,7 +25,7 @@ function App(props) {
         <div>
             <Header />
             <Routes>
-                <Route path = "/form" element={<SymptomForm onSubmit={addSymptom} />} />
+                <Route path = "/form" element={<SymptomForm onClick={addSymptom} />} />
                 <Route path="/graph" element={<Graphs />} />
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path= "*" element= {<Home />} />
