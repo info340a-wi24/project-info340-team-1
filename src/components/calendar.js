@@ -3,12 +3,60 @@ import '../style.css';
 
 export function Calendar() {
   const [appointments, setAppointments] = useState(null);
+  const [currentDate, setCurrentDate] = useState(new Date());
+
   const handleAddAppointment = (event) => {
     event.preventDefault();
   };
 
+  const daysInMonth = (month, year) => {
+    return new Date(year, month + 1, 0).getDate();
+  };
+
+  const firstDayOfMonth = (month, year) => {
+    return new Date(year, month, 1).getDay();
+  };
+
+  const renderCalendar = () => {
+    const month = currentDate.getMonth();
+    const year = currentDate.getFullYear();
+    const numDays = daysInMonth(month, year);
+    const startingDay = firstDayOfMonth(month, year);
+
+    const rows = [];
+    let cells = [];
+    for (let i = 0; i < startingDay; i++) {
+      cells.push(<td key={`empty-${i}`}></td>);
+    }
+
+    for (let day = 1; day <= numDays; day++) {
+      cells.push(<td key={day}>{day}</td>);
+      if ((day + startingDay) % 7 === 0 || day === numDays) {
+        rows.push(<tr key={day}>{cells}</tr>);
+        cells = [];
+      }
+    }
+
+    return (
+      <table className="calendar-table">
+        <thead>
+          <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+          </tr>
+        </thead>
+        <tbody>{rows}</tbody>
+      </table>
+    );
+  };
+
   return (
-    <div className="calendar">
+    <div className="calendar-page">
         <h2>Calendar</h2>
         <div className="two-view">
             <div className="Calendar">
@@ -16,7 +64,6 @@ export function Calendar() {
                 <h2>{/* Month */}</h2>
                 <br />
                 <table className="calendar-table">
-                    {/* Table Header */}
                     <thead>
                         <tr>
                             <th>Sun</th>
@@ -28,10 +75,8 @@ export function Calendar() {
                             <th>Sat</th>
                         </tr>
                     </thead>
-                    {/* Table Body */}
                     <tbody>
                         {/* Calendar Days */}
-                        {/* Map through dates here if they are dynamic */}
                     </tbody>
                 </table>
             </div>
