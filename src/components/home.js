@@ -1,9 +1,9 @@
 //import React from 'react';
 import '../style.css';
 import {SymptomForm} from './form';
-import {EditForm} from './editForm';
 import filterImg from '../img/filter.png';
-import editImg from '../img/edit.png'; 
+import addImg from '../img/add.png';
+import editImg from '../img/edit.png';
 import trashImg from '../img/trash.png';
 import mycharImg from '../img/mychar.png'; 
 import uwMHImg from '../img/uwMH.png';
@@ -46,6 +46,12 @@ export function Home ({symptoms}) {
                                     <button type="button" id="filter-image">
                                         <img src={filterImg} alt="Filter Icon"/>   
                                     </button>
+                                    <button type="button" id="add-image">
+                                        <Link to="/form" className="symptom_form">
+                                            {SymptomForm}
+                                            <img src={addImg} alt="Add Icon"/>
+                                        </Link>
+                                    </button>
                                 </div>
                             </section>
                             <ul>
@@ -55,7 +61,7 @@ export function Home ({symptoms}) {
                                             <Link to="/form" className="symptom_link">{symptom}</Link>
                                             <div className="symptom-button">
                                                 <a className="edit-btn" href="edit-form.html">
-                                                    <button id="close-image"><img src="../img/edit.png" alt="Edit" /></button>
+                                                    <button className='edit-icon'><img src={editImg} alt="Edit" /></button>
                                                     </a>
                                                     <button className="trash-icon" onClick={deleteButton}>
                                                         <img src={trashImg} alt="Trash Icon"/>

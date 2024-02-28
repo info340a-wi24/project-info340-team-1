@@ -212,7 +212,6 @@ header a {
     color: black;
   }
 
-
   button {
     display: inline-block;
     height: 2em;
@@ -405,16 +404,10 @@ button:hover {
     height: auto;
 }
 
-
 .symptom li, .symptom-button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
- #close-image {
-    background: transparent;
-    border: none;
 }
 
 .symptom img {
@@ -439,9 +432,23 @@ button:hover {
     margin-left: 10px;
 }
 
-#filter-image{
+#filter-image {
     background: transparent;
     border: none;
+}
+
+#add-image {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: transparent;
+    border: none;
+    padding: 5px;
+}
+
+#add-image img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 
