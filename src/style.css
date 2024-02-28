@@ -451,6 +451,20 @@ button:hover {
     border: none;
 }
 
+#add-image {
+    display: flex;
+    justify-content: right;
+    background: transparent;
+    border: none;
+    margin-left: 28rem;
+}
+
+#add-image img {
+    width: 4rem;
+    height: 4rem;
+}
+
+
 
 /* Responsive design */
 @media (max-width: 768px) {
