@@ -81,7 +81,7 @@ export function Calendar() {
           <button type="submit" className="add-button">Add</button>
         </form>
       </div>
-      <div className="event-list">
+      <div id="event-list">
         <h3>Upcoming Events</h3>
         <ul>
           {events.length ? (
