@@ -92,7 +92,9 @@ export function Calendar() {
                   checked={selectedEvents.includes(index)}
                   onChange={() => handleCheckboxChange(index)}
                 />
-                <strong>Date:</strong> {event.date}, <strong>Time:</strong> {event.time}, <strong>Description:</strong>{' '}
+                <strong>Date:</strong> {event.date},
+                <strong>Time:</strong> {event.time},
+                <strong>Description:</strong>{' '}
                 {event.description}
               </li>
             ))
@@ -105,7 +107,7 @@ export function Calendar() {
             <img src={trashImg} alt="Trash Icon"/>
           </button>
         )}
-        </div>
+      </div>
     </div>
   );
 };
