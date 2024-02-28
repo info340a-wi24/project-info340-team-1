@@ -1,6 +1,7 @@
 //import React from 'react';
 import '../style.css';
 import {SymptomForm} from './form';
+import {EditForm} from './editForm';
 import filterImg from '../img/filter.png';
 import addImg from '../img/add.png';
 import editImg from '../img/edit.png';
@@ -62,10 +63,10 @@ export function Home ({symptoms}) {
                                             <div className="symptom-button">
                                                 <a className="edit-btn" href="edit-form.html">
                                                     <button className='edit-icon'><img src={editImg} alt="Edit" /></button>
-                                                    </a>
-                                                    <button className="trash-icon" onClick={deleteButton}>
-                                                        <img src={trashImg} alt="Trash Icon"/>
-                                                    </button>
+                                                </a>
+                                                <button className="trash-icon" onClick={deleteButton}>
+                                                    <img src={trashImg} alt="Trash Icon"/>
+                                                </button>
                                             </div>
                                         </li>
                                     </section>
