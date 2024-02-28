@@ -347,11 +347,11 @@ button:hover {
     background-color: gray;
 }
 
-.event-list h3, #add-appointment h3 {
+#event-list h3, #add-appointment h3 {
     margin-top: 0;
 }
 
-.event-list {
+#event-list {
     background-color: lightblue;
     padding: 10px;
     border-radius: 5px;
