@@ -360,6 +360,11 @@ button:hover {
     margin-top: 20px;
 }
 
+.trashIcon {
+    height: 25px;
+    width: 25px;
+}
+
 
 /* CSS for graph  */
 /* Main content styles */
