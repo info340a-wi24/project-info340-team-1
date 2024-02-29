@@ -433,13 +433,13 @@ button:hover {
     gap: 8px;
 }
 
-.head, .filter {
+.head, .filter, .add {
     display: flex;
     justify-content: left;
     align-items: center;
 }
 
-.head img {
+.head .filterimg {
     height: 28px;
     width: 28px;
     margin-bottom: 20px;
@@ -451,12 +451,15 @@ button:hover {
     border: none;
 }
 
+
 #add-image {
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
+    align-items: center;
     background: transparent;
     border: none;
-    margin-left: 28rem;
+    padding-top: 5em;
+    margin-left: 34em;
 }
 
 #add-image img {
