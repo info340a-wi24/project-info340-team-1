@@ -260,7 +260,7 @@ header a {
 }
 
 /* The style setting for Calendar page -Edrick*/
-#calendar-page {
+#calendarPage {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
@@ -268,7 +268,7 @@ header a {
 }
 
 
-#Calendar {
+.Calendar {
     width: 70%;
     height: 350px;
     display: flex;
@@ -282,28 +282,28 @@ header a {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-#two-view {
+.twoView {
     display: flex;
     flex-direction: row;
     margin-bottom: 30px;
 }
 
-#Calendar h2 {
+.Calendar h2 {
     margin-bottom: 10px;
     text-align: center;
 }
 
-#calendar-table {
+.calendarTable {
     width: 100%;
 }
 
-#calendar-table th, #calendar-table td {
+.calendarTable th, .calendarTable td {
     padding: 10px;
     text-align: center;
     border: 1px solid lightgray;
 }
 
-#calendar-table th {
+.calendarTable th {
     background-color: lightgray;
     color: black;
 }
@@ -324,7 +324,7 @@ header a {
     flex-direction: column;
 }
 
-input[type="date"], input[type="time"], form textarea {
+#appointment-date, #appointment-time, #appointment-description {
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -357,6 +357,12 @@ button:hover {
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.trashIcon {
+    height: 25px;
+    width: 25px;
 }
 
 
