@@ -181,8 +181,26 @@ header a {
 }
 
 .head {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-left: auto;
     width: 100%;
-    padding: 1em;
+    padding: 1rem;
+}
+
+.symptom_add img {
+    width: 4rem;
+    padding-right: 2em;
+}
+
+.symptom img {
+    height: 25px;
+    width: 25px;
+}
+
+.symptom-button {
+    gap: 8px;
 }
 
 .tracker ul {
@@ -422,49 +440,6 @@ button:hover {
  #close-image {
     background: transparent;
     border: none;
-}
-
-.symptom img {
-    height: 25px;
-    width: 25px;
-}
-
-.symptom-button {
-    gap: 8px;
-}
-
-.head, .filter, .add {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-}
-
-.head .filterimg {
-    height: 28px;
-    width: 28px;
-    margin-bottom: 20px;
-    margin-left: 10px;
-}
-
-#filter-image{
-    background: transparent;
-    border: none;
-}
-
-
-#add-image {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background: transparent;
-    border: none;
-    padding-top: 5em;
-    margin-left: 34em;
-}
-
-#add-image img {
-    width: 4rem;
-    height: 4rem;
 }
 
 

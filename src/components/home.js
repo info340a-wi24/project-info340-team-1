@@ -44,14 +44,9 @@ export function Home ({symptoms}) {
                             <section className="head">
                                 <h2>Symptoms</h2>
                                 <div className="filter">
-                                    <button type="button" id="filter-image">
-                                        <img className="filterimg" src={filterImg} alt="Filter Icon"/>   
-                                    </button>
-                                    <button type="button" id="add-image">
-                                        <Link to="/form" className="symptom_form">
-                                            <img src={addImg} alt="Add Icon"/>
-                                        </Link>
-                                    </button>
+                                    <Link to="/form" className="symptom_add">
+                                        <img src={addImg} alt="Add Icon"/>
+                                    </Link>
                                 </div>
                             </section>
                             <ul>
@@ -60,7 +55,7 @@ export function Home ({symptoms}) {
                                         <li>
                                             <Link to="/form" className="symptom_link">{symptom}</Link>
                                             <div className="symptom-button">
-                                                <Link to="/edit-form" className="symptom_form">
+                                                <Link to="/editForm" className="symptom_form">
                                                     <img src={editImg} alt="Edit" />
                                                 </Link>
                                                 <button className="trash-icon" onClick={deleteButton}>
