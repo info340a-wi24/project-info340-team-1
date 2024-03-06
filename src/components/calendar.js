@@ -115,6 +115,7 @@ export function Calendar() {
           </button>
         )}
       </div>
+
       <div id="doctor-availability">
         <h3>Doctor's Availability</h3>
         <table>
