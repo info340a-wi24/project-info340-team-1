@@ -46,13 +46,6 @@ export function Calendar() {
     setSelectedEvents([]);
   }
 
-  const [doctorAvailability, setDoctorAvailability] = useState([
-    // Example doctor's availability data
-    { day: 'Monday', time: '10:00 AM - 2:00 PM' },
-    { day: 'Tuesday', time: '9:00 AM - 1:00 PM' },
-    { day: 'Wednesday', time: '2:00 PM - 6:00 PM' },
-  ]);
-
   return (
     <div id="calendarPage">
       <div id="add-appointment">
@@ -114,26 +107,6 @@ export function Calendar() {
             <img src={trashImg} alt="Trash Icon"/>
           </button>
         )}
-      </div>
-
-      <div id="doctor-availability">
-        <h3>Doctor's Availability</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Day</th>
-              <th>Availability Time</th>
-            </tr>
-          </thead>
-          <tbody>
-            {doctorAvailability.map((availability, index) => (
-              <tr key={index}>
-                <td>{availability.day}</td>
-                <td>{availability.time}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
       </div>
     </div>
   );
