@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../style.css';
-// import trashImg from '../img/trash.png';
 
 export function Calendar() {
   const [formData, setFormData] = useState({
@@ -107,10 +106,14 @@ export function Calendar() {
         </div>
       )}
     </div>
-    {selectedEvents.length > 0 && (
-      <button className="deleteButton" onClick={handleDeleteSelected}>Delete</button>
-    )}
-  </div>
+      {selectedEvents.length > 0 && (
+        <button className="deleteButton" onClick={handleDeleteSelected}>Delete</button>
+      )}
+    </div>
+    <footer className="footer">
+      <p>This page was created by our Info 340 team</p>
+      <p>&copy; 2024 SymptoTrack.</p>
+    </footer>
     </div>
   );
 };

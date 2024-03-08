@@ -128,6 +128,10 @@ header {
     color: white;
     text-align: center;
     padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    left: 0;
 }
 
 .element{
@@ -288,9 +292,7 @@ header a {
 #calendarPage {
     display: flex;
     justify-content: space-between;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin: 25px 20px;
+    margin: 30px 20px;
 }
 
 #add-appointment {
@@ -371,7 +373,7 @@ button:hover {
     width: 45%;
     margin-bottom: 20px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
