@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../style.css';
-import trashImg from '../img/trash.png';
+// import trashImg from '../img/trash.png';
 
 export function Calendar() {
   const [formData, setFormData] = useState({
@@ -44,12 +44,6 @@ export function Calendar() {
     const updatedEvents = events.filter((event, index) => !selectedEvents.includes(index));
     setEvents(updatedEvents);
     setSelectedEvents([]);
-  }
-
-  const handleDeleteEvent = (index) => {
-    const updatedEvents = [...events];
-    updatedEvents.splice(index, 1);
-    setEvents(updatedEvents);
   }
 
   return (
@@ -107,14 +101,14 @@ export function Calendar() {
         ))
       ) : (
         <div className="card">
-          <div className="card-body">
-            <p className="card-text">No events scheduled</p>
+          <div className="card-body no-event">
+            <p className="card-text"><strong>No Events Scheduled!</strong></p>
           </div>
         </div>
       )}
     </div>
     {selectedEvents.length > 0 && (
-      <button className="btn btn-danger" onClick={handleDeleteSelected}></button>
+      <button className="deleteButton" onClick={handleDeleteSelected}>Delete</button>
     )}
   </div>
     </div>

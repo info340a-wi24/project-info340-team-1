@@ -285,11 +285,12 @@ header a {
 }
 
 /* The style setting for Calendar page -Edrick*/
-#calendar-page {
+#calendarPage {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     margin-left: 10px;
     margin-right: 10px;
+    margin: 25px 20px;
 }
 
 #add-appointment {
@@ -298,9 +299,10 @@ header a {
     background-color: #f9f9f9;
     padding: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    width: 50%;
-    height: auto;
+    width: 20%;
+    height: 400px;
     border: 1px solid #ccc;
+    position: relative;
 }
 
 #add-appointment form {
@@ -313,10 +315,9 @@ input[type="date"], input[type="time"], form textarea {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 3px;
-    width: 50%;
 }
 
-form button {
+.add-button, .deleteButton {
     margin-top: 10px;
     padding: 10px 20px;
     background-color: black;
@@ -324,7 +325,13 @@ form button {
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    width: 50%;
+    height: 2.6em;
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+    width: 30%;
 }
 
 button:hover {
@@ -332,16 +339,51 @@ button:hover {
 }
 
 #event-list h3, #add-appointment h3 {
+    text-align: center;
     margin-top: 0;
 }
 
 #event-list {
     background-color: lightblue;
     padding: 10px;
+    padding-bottom: 50px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    width: 75%;
+    min-height: 200px;
+    position: relative;
 }
+.card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    width: 45%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.no-event {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+  }
 
 
 /* CSS for graph  */
