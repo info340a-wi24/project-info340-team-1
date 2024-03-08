@@ -53,9 +53,9 @@ export function Home ({symptoms , onDeleteSymptom}) {
                                             <li>
                                                 <Link to={`/editForm/${symptom.id}`} className="symptom_link">{symptom.title}</Link> 
                                                 <div className="symptom-button">
-                                                    <Link to={`/editForm/${symptom.id}`} className="symptom_form">
-                                                        <img src={editImg} alt="Edit" />
-                                                    </Link>
+                                                <Link to={`/editForm/${symptom.id}`} state={{ ...symptom }}>
+                                                    <img src={editImg} alt="Edit" />
+                                                </Link>
                                                     <button className="trash-icon" onClick={() => onDeleteSymptom(symptom.id)}>
                                                         <img src={trashImg} alt="Trash Icon" />
                                                     </button>

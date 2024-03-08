@@ -33,17 +33,23 @@ export function SymptomForm({ onFormSubmit }) {
     });
 
     const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
+        const { name, value, type, checked } = e.target;
+        if (type === 'radio') {
+            setFormData(prevFormData => ({
+                ...prevFormData,
+                [name]: checked ? value : prevFormData.painLevel,
+            }));
+        } else {
+            setFormData(prevFormData => ({
+                ...prevFormData,
+                [name]: value,
+            }));
+        }
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const newSymptomTitle = formData.title;
-        onFormSubmit(newSymptomTitle);
+        onFormSubmit(formData); // Pass the entire formData object
         navigate("/home");
     };
 

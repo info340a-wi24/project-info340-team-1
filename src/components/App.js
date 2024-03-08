@@ -27,18 +27,27 @@ export function Header() {
 
 function App(props) {
     const [symptoms, setSymptoms] = useState([]);
+    const symptomsRef = ref(db, 'symptoms');
+    const newRef = push(symptomsRef);
 
 
-
-    const addSymptomToFirebase = (formData) => {
+    const addSymptomToFirebase = (symptomData) => {
         const newRef = push(ref(db, 'symptoms'));
-        set(newRef, formData); 
+        return set(newRef, symptomData); // Return the promise here
     };
 
-    // 保持这个函数不变，它将新症状添加到本地状态
-    const handleFormSubmit = (newSymptomTitle) => {
-        setSymptoms(prevSymptoms => [...prevSymptoms, {title: newSymptomTitle}]);
-        addSymptomToFirebase({ title: newSymptomTitle }); // 调用上面的函数将数据发送到 Firebase
+    const handleFormSubmit = (formData) => {
+        addSymptomToFirebase(formData) // Call with the full formData
+          .then(() => {
+            // After successfully saving to Firebase, update the local state
+            setSymptoms(prevSymptoms => [
+              ...prevSymptoms,
+              { ...formData, id: newRef.key }, // Include the id from Firebase
+            ]);
+          })
+          .catch(error => {
+            console.error("Error writing to Firebase: ", error);
+        });
     };
 
     const handleDeleteSymptom = (symptomId) => {
@@ -70,8 +79,7 @@ function App(props) {
         <div>
             <Header />
             <Routes>
-                <Route path = "/form" element = {<SymptomForm onFormSubmit={handleFormSubmit}/>} />
-                <Route path="/editForm" element={<EditForm />} />
+                <Route path="/form" element={<SymptomForm onFormSubmit={handleFormSubmit} />} />
                 <Route path="/graph" element={<Graphs />} />
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path="*" element={<Home symptoms={symptoms} onDeleteSymptom={handleDeleteSymptom} />} />
