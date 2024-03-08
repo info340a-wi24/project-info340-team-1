@@ -1,24 +1,33 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect }from 'react';
 import '../style.css';
+import { useNavigate } from 'react-router-dom';
 
-export function SymptomForm({onSubmit}) {
-    const [formData, setFormData] = useState({
-        date: '',
-        duration: '',
-        symptom: '',
-        pain: ''
-    });
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        onSubmit(formData);
-        setFormData({
-            date: '',
-            duration: '',
-            symptom: '',
-            pain: ''
-        });
-    };
+
+export function SymptomForm({ onFormSubmit }) {
+
+    const navigate = useNavigate(); //access navigate function
+    const [title, setTitle] = useState('');
+    // useEffect(() => {
+    //     // Use the updated title value
+    //     if (title) {
+    //       navigate("/home", { state: { title } });
+    //     }
+    //   }, [title, navigate]);
+    
+    // const handleSubmit = function(event) {
+    //     event.preventDefault();
+    //     setTitle(event.target.elements.title.value);
+    // }
+    const handleSubmit = function (event) {
+        event.preventDefault();
+        const newTitle = event.target.elements.title.value;
+        
+        setTitle(newTitle);
+        onFormSubmit(newTitle);
+        navigate("/home", { state: { title: newTitle } });
+      };
+      
 
     return(
         <div>
@@ -27,6 +36,10 @@ export function SymptomForm({onSubmit}) {
                     <h2 className="form-header">Symptom Form</h2>
                     <div className="form-container">
                         <form onSubmit={handleSubmit}>
+                            <div className="form-group">
+                                <label htmlFor="title">Symptom Title:</label>
+                                <input type="text" className="form-title-control" name="title" id="symptom_title" />
+                            </div>
                             <div className="form-group">
                                 <label htmlFor="date">Date:</label>
                                 <input type="date" className="form-control" name="date" id="date_field" />

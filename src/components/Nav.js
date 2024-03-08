@@ -6,7 +6,7 @@ export function Nav() {
     <nav className="nav">
          <div id="hamburger-menu"><a href="#"><i className="fa fa-bars" aria-label="menu"></i></a></div>
             <ul id="nav-links">
-                <li><NavLink to="/home" className="active">Home</NavLink></li>
+                <li><NavLink to="/home">Home</NavLink></li>
                 <li><NavLink to="/calendar">Calendar</NavLink></li>
                 <li><NavLink to="/graph">Data Visualization</NavLink></li>
                 <li><NavLink to="/form">Form</NavLink></li>

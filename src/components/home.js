@@ -1,16 +1,22 @@
-import React from 'react';
+//import React from 'react';
 import '../style.css';
 import {SymptomForm} from './form';
 import {EditForm} from './editForm';
 import filterImg from '../img/filter.png';
-import editImg from '../img/edit.png'; 
+import addImg from '../img/add.png';
+import editImg from '../img/edit.png';
 import trashImg from '../img/trash.png';
 import mycharImg from '../img/mychar.png'; 
 import uwMHImg from '../img/uwMH.png';
 import webMDImg from '../img/webMD.png'; 
 import seaHealthImg from '../img/seattleHealth.png'; 
 
+// for add function
+import React, { useState, useEffect }from 'react';
+import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
+// delete function 
 function deleteButton(event) {
     const symptomElement = event.target.closest('.symptom');
     if (symptomElement) {
@@ -18,7 +24,18 @@ function deleteButton(event) {
     }
 }
 
-export function Home (props) {
+export function Home ({symptoms}) {
+    const location = useLocation();
+    const [titles, setTitles] = useState([]);
+
+    //Effect to update titles when location state changes
+    useEffect(() => {
+        const newTitle = location.state ? location.state.title : null;
+        if (newTitle) {
+            setTitles(prevTitles => [...prevTitles, newTitle]);
+            }
+        }, [location.state]);
+
     return (
         <div>
             <main id="main_page">
@@ -27,80 +44,30 @@ export function Home (props) {
                             <section className="head">
                                 <h2>Symptoms</h2>
                                 <div className="filter">
-                                    <button type="button" id="filter-image">
-                                        <img src={filterImg} alt="Filter Icon"/>   
-                                    </button>
+                                    <Link to="/form" className="symptom_add">
+                                        <img src={addImg} alt="Add Icon"/>
+                                    </Link>
                                 </div>
                             </section>
                             <ul>
-                                <section className="symptom">
-                                    <li>
-                                        <a className="symptom_link" href="Chest Pain">Chest Pain</a>
-                                        <div className="symptom-button">
-                                        <a href = "/edit-form" target="_blank"><img src={editImg} alt="Edit Icon"/></a>
-                                            <button className="trash-icon" onClick={deleteButton}>
-                                                <img src={trashImg} alt="Trash Icon"/>
-                                            </button>
-                                        </div>
-                                    </li>
-                                </section>
-                                <section className="symptom">
-                                    <li>
-                                        <a className="symptom_link" href="Runny Nose">Runny Nose</a>
-                                        <div className="symptom-button">
-                                        <a href = "/edit-form" target="_blank"><img src={editImg} alt="Edit Icon"/></a>
-                                            <button className="trash-icon" onClick={deleteButton}>
-                                                <img src={trashImg} alt="Trash Icon"/>
-                                            </button>
-                                        </div>
-                                    </li>
-                                </section>
-                                <section className="symptom">
-                                    <li>
-                                        <a className="symptom_link" href="Hives Flare Again">Hives Flare Again</a>
-                                        <div className="symptom-button">
-                                        <a href = "/edit-form" target="_blank"><img src={editImg} alt="Edit Icon"/></a>
-                                            <button className="trash-icon" onClick={deleteButton}>
-                                                <img src={trashImg} alt="Trash Icon"/>
-                                            </button>
-                                        </div>
-                                    </li>
-                                </section>
-                                <section className="symptom">
-                                    <li>
-                                        <a className="symptom_link" href="Cough">Cough</a>
-                                        <div className="symptom-button">
-                                        <a href = "/edit-form" target="_blank"><img src={editImg} alt="Edit Icon"/></a>
-                                            <button className="trash-icon" onClick={deleteButton}>
-                                                <img src={trashImg} alt="Trash Icon"/>
-                                            </button>
-                                        </div>
-                                    </li>
-                                </section>
-                                <section className="symptom">
-                                    <li>
-                                        <a className="symptom_link" href="Fever">Fever</a>
-                                        <div className="symptom-button">
-                                        <a href = "/edit-form" target="_blank"><img src={editImg} alt="Edit Icon"/></a>
-                                            <button className="trash-icon" onClick={deleteButton}>
-                                                <img src={trashImg} alt="Trash Icon"/>
-                                            </button>
-                                        </div>
-                                    </li>
-                                </section>
-                                <section className="symptom">
-                                    <li>
-                                        <a className="symptom_link" href="Hive Flare">Hive Flare</a>
-                                        <div className="symptom-button">
-                                        <a href = "/edit-form" target="_blank"><img src={editImg} alt="Edit Icon"/></a>
-                                            <button className="trash-icon" onClick={deleteButton}>
-                                                <img src={trashImg} alt="Trash Icon"/>
-                                            </button>
-                                        </div>
-                                    </li>
-                                </section>
+                                {symptoms.map((symptom, index) => (
+                                    <section className="symptom" key={index}>
+                                        <li>
+                                            <Link to="/form" className="symptom_link">{symptom}</Link>
+                                            <div className="symptom-button">
+                                                <Link to="/editForm" className="symptom_form">
+                                                    <img src={editImg} alt="Edit" />
+                                                </Link>
+                                                <button className="trash-icon" onClick={deleteButton}>
+                                                    <img src={trashImg} alt="Trash Icon"/>
+                                                </button>
+                                            </div>
+                                        </li>
+                                    </section>
+                                ))}
                             </ul>
                         </div>
+
 
                         <div className="quick-links">
                             <div className="link-box">
