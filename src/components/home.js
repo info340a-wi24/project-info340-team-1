@@ -30,12 +30,9 @@ export function Home ({symptoms , onDeleteSymptom}) {
 
     //Effect to update titles when location state changes
     useEffect(() => {
-        const newTitle = location.state ? location.state.title : null;
-        if (newTitle) {
-            setTitles(prevTitles => [...prevTitles, newTitle]);
-            }
-        }, [location.state]);
-
+        const newTitles = symptoms.map(symptom => symptom.title);
+        setTitles(newTitles);
+    }, [symptoms]);
     return (
         <div id ="wrapper">
             <div id="contents">
@@ -54,7 +51,7 @@ export function Home ({symptoms , onDeleteSymptom}) {
                                     {symptoms.map(symptom => (
                                         <section className="symptom" key={symptom.id}>
                                             <li>
-                                                <Link to={`/editForm/${symptom.id}`} className="symptom_link">{symptom.text}</Link> 
+                                                <Link to={`/editForm/${symptom.id}`} className="symptom_link">{symptom.title}</Link> 
                                                 <div className="symptom-button">
                                                     <Link to={`/editForm/${symptom.id}`} className="symptom_form">
                                                         <img src={editImg} alt="Edit" />

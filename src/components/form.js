@@ -42,8 +42,9 @@ export function SymptomForm({ onFormSubmit }) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        onFormSubmit(formData);
-        navigate("/home", { state: { title: formData.title } });
+        const newSymptomTitle = formData.title;
+        onFormSubmit(newSymptomTitle);
+        navigate("/home");
     };
 
     return(
@@ -141,7 +142,7 @@ export function SymptomForm({ onFormSubmit }) {
                                     onChange={handleInputChange}
                                 /> Very Severe Pain<br />
                             </div>
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                            <button id="submit" type="submit" className="btn btn-primary">Submit</button>
                         </form>
                     </div>
                 </section>

@@ -110,19 +110,6 @@ header {
     height: 100px;
 }
 
-.btn-primary {
-    background-color: rgb(147, 192, 221);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn-primary:hover {
-    background-color: rgb(147, 192, 221);
-}
-
 .footer {
     background-color: #0f184f;
     color: white;
@@ -245,13 +232,27 @@ header a {
 
   button {
     display: inline-block;
-    height: 2em;
+    /*height: 2em;*/
     padding: 0;
+    width: 2em;
     margin: 0;
     vertical-align: top;
-    width: 2em;
     background: transparent;
     border: none;
+}
+
+   #submit {
+    background-color: rgb(73, 95, 239);
+    color: white;
+    border: none;
+    padding: 10px 20px;;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 2em;
+}
+
+#submit:hover {
+    background-color: rgb(17, 95, 220);
 }
 
 .quick-links {
@@ -376,12 +377,13 @@ button:hover {
     width: 45%;
     margin-bottom: 20px;
     border-radius: 5px;
-    border: 1px solid black;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .card-body {
     padding: 20px;
+    border: 2.5px solid black;
+    background-color: white;
 }
 
 .no-event {

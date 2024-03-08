@@ -12,7 +12,6 @@ import { firebaseConfig} from './Config'; // import firebase-config
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, onValue, off, push, set, remove } from 'firebase/database';
 
-
 // Initialize Firebase app
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
@@ -37,9 +36,9 @@ function App(props) {
     };
 
     // 保持这个函数不变，它将新症状添加到本地状态
-    const handleFormSubmit = (newSymptom) => {
-        setSymptoms(prevSymptoms => [...prevSymptoms, newSymptom]);
-        addSymptomToFirebase(newSymptom); // 调用上面的函数将数据发送到 Firebase
+    const handleFormSubmit = (newSymptomTitle) => {
+        setSymptoms(prevSymptoms => [...prevSymptoms, {title: newSymptomTitle}]);
+        addSymptomToFirebase({ title: newSymptomTitle }); // 调用上面的函数将数据发送到 Firebase
     };
 
     const handleDeleteSymptom = (symptomId) => {
