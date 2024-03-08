@@ -24,7 +24,7 @@ function deleteButton(event) {
     }
 }
 
-export function Home ({symptoms}) {
+export function Home ({symptoms , onDeleteSymptom}) {
     const location = useLocation();
     const [titles, setTitles] = useState([]);
 
@@ -50,22 +50,23 @@ export function Home ({symptoms}) {
                                 </div>
                             </section>
                             <ul>
-                                {symptoms.map((symptom, index) => (
-                                    <section className="symptom" key={index}>
+                                {symptoms.map(symptom => (
+                                    <section className="symptom" key={symptom.id}>
                                         <li>
-                                            <Link to="/form" className="symptom_link">{symptom}</Link>
+                                            <Link to={`/editForm/${symptom.id}`} className="symptom_link">{symptom.text}</Link> 
                                             <div className="symptom-button">
-                                                <Link to="/editForm" className="symptom_form">
+                                                <Link to={`/editForm/${symptom.id}`} className="symptom_form">
                                                     <img src={editImg} alt="Edit" />
                                                 </Link>
-                                                <button className="trash-icon" onClick={deleteButton}>
-                                                    <img src={trashImg} alt="Trash Icon"/>
+                                                <button className="trash-icon" onClick={() => onDeleteSymptom(symptom.id)}>
+                                                    <img src={trashImg} alt="Trash Icon" />
                                                 </button>
                                             </div>
                                         </li>
                                     </section>
                                 ))}
                             </ul>
+
                         </div>
 
 
