@@ -94,6 +94,10 @@ export function Home ({symptoms , onDeleteSymptom}) {
                         </div>
                     </div>
             </main>
+            <footer className="footer">
+                <p>This page was created by our Info 340 team</p>
+                <p>&copy; 2024 SymptoTrack.</p>
+            </footer>
         </div>
         )
     };
