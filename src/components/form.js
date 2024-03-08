@@ -14,7 +14,7 @@ export function SymptomForm({ onFormSubmit }) {
     //       navigate("/home", { state: { title } });
     //     }
     //   }, [title, navigate]);
-    
+
     // const handleSubmit = function(event) {
     //     event.preventDefault();
     //     setTitle(event.target.elements.title.value);
@@ -22,12 +22,12 @@ export function SymptomForm({ onFormSubmit }) {
     const handleSubmit = function (event) {
         event.preventDefault();
         const newTitle = event.target.elements.title.value;
-        
+
         setTitle(newTitle);
         onFormSubmit(newTitle);
         navigate("/home", { state: { title: newTitle } });
       };
-      
+
 
     return(
         <div>
@@ -71,6 +71,10 @@ export function SymptomForm({ onFormSubmit }) {
                         </form>
                     </div>
                 </section>
+                <footer className="footer">
+                <p>This page was created by our Info 340 team</p>
+                <p>&copy; 2024 SymptoTrack.</p>
+                </footer>
             </main>
         </div>
     );

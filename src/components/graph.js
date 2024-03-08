@@ -1,7 +1,7 @@
 import React from 'react';
 import '../style.css';
-import LineChartImg from '../img/lineChart.png'; 
-import PieChartImg from '../img/pieChart.png'; 
+import LineChartImg from '../img/lineChart.png';
+import PieChartImg from '../img/pieChart.png';
 
 
 function GraphCard({ title, description, imgSrc, altText }) {
@@ -35,6 +35,10 @@ export function Graphs() {
           />
         </div>
       </main>
+      <footer className="footer">
+      <p>This page was created by our Info 340 team</p>
+      <p>&copy; 2024 SymptoTrack.</p>
+      </footer>
     </div>
   );
 }

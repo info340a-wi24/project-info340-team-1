@@ -46,7 +46,7 @@ export function Calendar() {
   }
 
   return (
-    <div id="calendarPage">
+    <main id="calendarPage">
       <div id="add-appointment">
         <h3>Add Appointment</h3>
         <form id="appointment-form" onSubmit={handleSubmit}>
@@ -114,6 +114,6 @@ export function Calendar() {
       <p>This page was created by our Info 340 team</p>
       <p>&copy; 2024 SymptoTrack.</p>
     </footer>
-    </div>
+    </main>
   );
 };
