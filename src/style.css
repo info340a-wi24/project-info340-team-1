@@ -128,7 +128,7 @@ header {
     color: white;
     text-align: center;
     padding: 20px;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100vw;
     left: 0;
@@ -249,6 +249,8 @@ header a {
     margin: 0;
     vertical-align: top;
     width: 2em;
+    background: transparent;
+    border: none;
 }
 
 .quick-links {
