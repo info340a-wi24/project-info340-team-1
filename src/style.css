@@ -186,6 +186,7 @@ header a {
 
 .head {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-content: center;
     margin-left: auto;
@@ -499,5 +500,17 @@ button:hover {
 
     .link {
         flex: 0 13em;
+    }
+}
+
+@media (max-width: 1045px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tracker, .quick-links {
+        width: 80%;
     }
 }
