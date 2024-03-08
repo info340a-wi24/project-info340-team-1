@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../style.css';
-import trashImg from '../img/trash.png';
 
 export function Calendar() {
   const [formData, setFormData] = useState({
@@ -82,32 +81,39 @@ export function Calendar() {
         </form>
       </div>
       <div id="event-list">
-        <h3>Upcoming Events</h3>
-        <ul>
-          {events.length ? (
-            events.map((event, index) => (
-              <li key={index}>
-                <input
-                  type="checkbox"
-                  checked={selectedEvents.includes(index)}
-                  onChange={() => handleCheckboxChange(index)}
-                />
-                <strong>Date:</strong> {event.date},
-                <strong>Time:</strong> {event.time},
-                <strong>Description:</strong>{' '}
-                {event.description}
-              </li>
-            ))
-          ) : (
-            <li>No events scheduled</li>
-          )}
-        </ul>
-        {selectedEvents.length > 0 && (
-          <button onClick={handleDeleteSelected}>
-            <img src={trashImg} alt="Trash Icon"/>
-          </button>
-        )}
-      </div>
+    <h3>Upcoming Events</h3>
+    <div className="card-deck">
+      {events.length ? (
+        events.map((event, index) => (
+          <div className="card" key={index}>
+            <div className="card-body">
+              <input
+                type="checkbox"
+                checked={selectedEvents.includes(index)}
+                onChange={() => handleCheckboxChange(index)}
+              />
+              <h5 className="card-title">Date: {event.date}</h5>
+              <p className="card-text">Time: {event.time}</p>
+              <p className="card-text">Description: {event.description}</p>
+            </div>
+          </div>
+        ))
+      ) : (
+        <div className="card">
+          <div className="card-body no-event">
+            <p className="card-text"><strong>No Events Scheduled!</strong></p>
+          </div>
+        </div>
+      )}
+    </div>
+      {selectedEvents.length > 0 && (
+        <button className="deleteButton" onClick={handleDeleteSelected}>Delete</button>
+      )}
+    </div>
+    <footer className="footer">
+      <p>This page was created by our Info 340 team</p>
+      <p>&copy; 2024 SymptoTrack.</p>
+    </footer>
     </div>
   );
 };
