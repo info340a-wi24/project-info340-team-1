@@ -37,13 +37,18 @@ function App(props) {
     };
 
     const handleFormSubmit = (formData) => {
-        addSymptomToFirebase(formData) // Call with the full formData
+        const symptomsRef = ref(db, 'symptoms');
+        const newSymptomRef = push(symptomsRef);
+        set(newSymptomRef, formData)
           .then(() => {
-            // After successfully saving to Firebase, update the local state
-            setSymptoms(prevSymptoms => [
-              ...prevSymptoms,
-              { ...formData, id: newRef.key }, // Include the id from Firebase
-            ]);
+            onValue(symptomsRef, (snapshot) => {
+              const symptomsData = snapshot.val();
+              const symptomsList = symptomsData ? Object.keys(symptomsData).map(key => ({
+                  ...symptomsData[key],
+                  id: key,
+              })) : [];
+              setSymptoms(symptomsList);
+            });
           })
           .catch(error => {
             console.error("Error writing to Firebase: ", error);
