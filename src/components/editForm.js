@@ -1,46 +1,55 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { ref, onValue, off } from 'firebase/database';  // Import necessary Firebase functions
 import '../style.css';
 
-export function EditForm() {
-    return (
-        <main className="container-form">
-            <section className="form-section">
-                <h2 className="form-header">Symptom Form</h2>
-                <div className="form-container">
-                    <form>
-                        <div className="form-group">
-                            <label htmlFor="date">Date:</label>
-                            <input type="date" className="form-control" name="date" id="date_field" value="2024-02-06" />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="duration">Duration:</label>
-                            <select className="form-control" name="duration" id="duration_field">
-                                <option value="" disabled selected>Select duration</option>
-                                <option value="3-4">3-4 days</option>
-                                <option value="1-2" selected>1-2 weeks</option>
-                                <option value="1-2 months">1-2 months</option>
-                                <option value="many months">A couple of months</option>
-                                <option value="more">More than that</option>
-                            </select>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="symptoms_field">Describe Your Symptoms:</label>
-                            <textarea className="form-control form-text" name="symptom" id="symptom_field" rows="5">
-                                I have been feeling very dizzy recently, the feeling happens a lot when I stand up and I don't know why. It makes getting up in the mornings very hard, I have been taking tylenol for it.
-                            </textarea>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="pain">Rate your pain:</label><br />
-                            <input type="radio" name="pain" value="1" /> No Pain<br />
-                            <input type="radio" name="pain" value="2" checked /> Mild Pain<br />
-                            <input type="radio" name="pain" value="3" /> Moderate Pain<br />
-                            <input type="radio" name="pain" value="4" /> Severe Pain<br />
-                            <input type="radio" name="pain" value="5" /> Very Severe Pain<br />
-                        </div>
-                        <button type="submit" className="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-            </section>
-        </main>
-    );
+export function EditSymptomForm({ onUpdateSymptom, db }) {
+  const navigate = useNavigate();
+  const { symptomId } = useParams();
+  const [formData, setFormData] = useState({/* Initial form data */});
+
+  useEffect(() => {
+    // Fetch the existing symptom data from Firebase using symptomId
+    const symptomRef = ref(db, `symptoms/${symptomId}`);
+    onValue(symptomRef, (snapshot) => {
+      const symptomData = snapshot.val();
+      setFormData(symptomData);
+    });
+
+    // Cleanup the listener
+    return () => off(symptomRef);
+  }, [symptomId]);
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    // Handle input changes based on your form structure
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [name]: type === 'radio' ? (checked ? value : prevFormData[name]) : value,
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onUpdateSymptom(symptomId, formData);
+    navigate("/home");
+  };
+
+  return (
+    <div>
+      <h2>Edit Symptom</h2>
+      <form onSubmit={handleSubmit}>
+        {/* Your form input fields go here, use handleInputChange for onChange */}
+        <label htmlFor="title">Symptom Title:</label>
+        <input
+          type="text"
+          name="title"
+          value={formData.title}
+          onChange={handleInputChange}
+        />
+        {/* Repeat similar pattern for other input fields */}
+        <button type="submit">Update Symptom</button>
+      </form>
+    </div>
+  );
 }

@@ -1,29 +1,11 @@
 import React, { useState, useEffect }from 'react';
 import '../style.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 
 
-export function SymptomForm({ onFormSubmit }) {
+export function SymptomForm({ onFormSubmit, existingSymptomData }) {
     const navigate = useNavigate();
-    // const navigate = useNavigate(); //access navigate function
-    // const [title, setTitle] = useState('');
-    // // useEffect(() => {
-    // //     // Use the updated title value
-    // //     if (title) {
-    // //       navigate("/home", { state: { title } });
-    // //     }
-    // //   }, [title, navigate]);
-    
-    // // const handleSubmit = function(event) {
-    // //     event.preventDefault();
-    // //     setTitle(event.target.elements.title.value);
-    // // }
-    
-    // const [date, setDate] = useState('');
-    // const [duration, setDuration] = useState('');
-    // const [description, setDescription] = useState('');
-    // const [painLevel, setPainLevel] = useState('');
     const [formData, setFormData] = useState({
         title: '',
         date: '',
@@ -31,6 +13,11 @@ export function SymptomForm({ onFormSubmit }) {
         description: '',
         painLevel: '',
     });
+    useEffect(() => {
+        if (existingSymptomData) {
+          setFormData(existingSymptomData);
+        }
+      }, [existingSymptomData]);
 
     const handleInputChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -49,7 +36,7 @@ export function SymptomForm({ onFormSubmit }) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        onFormSubmit(formData); // Pass the entire formData object
+        onFormSubmit(formData, !!existingSymptomData);
         navigate("/home");
     };
 
@@ -57,7 +44,7 @@ export function SymptomForm({ onFormSubmit }) {
         <div>
             <main className="container-form">
                 <section className="form-section">
-                    <h2 className="form-header">Symptom Form</h2>
+                    <h2 className="form-header">{existingSymptomData ? 'Edit Symptom' : 'Symptom Form'}</h2>
                     <div className="form-container">
                         <form onSubmit={handleSubmit}>
                             <div className="form-group">
@@ -148,7 +135,9 @@ export function SymptomForm({ onFormSubmit }) {
                                     onChange={handleInputChange}
                                 /> Very Severe Pain<br />
                             </div>
-                            <button id="submit" type="submit" className="btn btn-primary">Submit</button>
+                            <button id="submit" type="submit" className="btn btn-primary" >
+                                {existingSymptomData ? 'Update' : 'Submit'}
+                            </button>
                         </form>
                     </div>
                 </section>

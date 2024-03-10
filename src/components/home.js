@@ -51,7 +51,9 @@ export function Home ({symptoms , onDeleteSymptom}) {
                                     {symptoms.map(symptom => (
                                         <section className="symptom" key={symptom.id}>
                                             <li>
-                                                <Link to={`/editForm/${symptom.id}`} className="symptom_link">{symptom.title}</Link> 
+                                                <Link to={symptom.id ? `/editForm/${symptom.id}` : "/form"} className="symptom_link">
+                                                    {symptom.title}
+                                                </Link>
                                                 <div className="symptom-button">
                                                 <Link to={`/editForm/${symptom.id}`} state={{ ...symptom }}>
                                                     <img src={editImg} alt="Edit" />

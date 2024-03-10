@@ -6,7 +6,7 @@ import {Calendar} from './calendar';
 import {Graphs} from './graph';
 import {Nav} from './Nav';
 import{Home} from './home';
-import { EditForm } from './editForm';
+import { EditSymptomForm } from './editForm';
 
 import { firebaseConfig} from './Config'; // import firebase-config
 import { initializeApp } from 'firebase/app';
@@ -28,31 +28,49 @@ export function Header() {
 function App(props) {
     const [symptoms, setSymptoms] = useState([]);
     const symptomsRef = ref(db, 'symptoms');
-    const newRef = push(symptomsRef);
 
 
-    const addSymptomToFirebase = (symptomData) => {
-        const newRef = push(ref(db, 'symptoms'));
-        return set(newRef, symptomData); // Return the promise here
-    };
+    const updateSymptomInFirebase = (symptomId, updatedSymptomData) => {
+        const symptomRef = ref(db, `symptoms/${symptomId}`);
+        return set(symptomRef, updatedSymptomData);
+      };
 
-    const handleFormSubmit = (formData) => {
-        const symptomsRef = ref(db, 'symptoms');
-        const newSymptomRef = push(symptomsRef);
-        set(newSymptomRef, formData)
-          .then(() => {
-            onValue(symptomsRef, (snapshot) => {
-              const symptomsData = snapshot.val();
-              const symptomsList = symptomsData ? Object.keys(symptomsData).map(key => ({
-                  ...symptomsData[key],
-                  id: key,
-              })) : [];
-              setSymptoms(symptomsList);
-            });
-          })
-          .catch(error => {
-            console.error("Error writing to Firebase: ", error);
-        });
+      const handleFormSubmit = (formData, isEditing = false) => {
+        if (isEditing) {
+            // Handle updating an existing symptom
+            const symptomRef = ref(db, `symptoms/${formData.id}`);
+            set(symptomRef, formData)
+              .then(() => {
+                onValue(symptomsRef, (snapshot) => {
+                    const symptomsData = snapshot.val();
+                    const symptomsList = symptomsData ? Object.keys(symptomsData).map(key => ({
+                        ...symptomsData[key],
+                        id: key,
+                    })) : [];
+                    setSymptoms(symptomsList);
+                });
+              })
+              .catch(error => {
+                console.error("Error updating symptom in Firebase: ", error);
+              });
+        } else {
+            // Handle adding a new symptom
+            const newSymptomRef = push(symptomsRef);
+            set(newSymptomRef, formData)
+                .then(() => {
+                    onValue(symptomsRef, (snapshot) => {
+                        const symptomsData = snapshot.val();
+                        const symptomsList = symptomsData ? Object.keys(symptomsData).map(key => ({
+                            ...symptomsData[key],
+                            id: key,
+                        })) : [];
+                        setSymptoms(symptomsList);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error writing to Firebase: ", error);
+                });
+        }
     };
 
     const handleDeleteSymptom = (symptomId) => {
@@ -85,6 +103,7 @@ function App(props) {
             <Header />
             <Routes>
                 <Route path="/form" element={<SymptomForm onFormSubmit={handleFormSubmit} />} />
+                <Route path="/editForm/:symptomId" element={<EditSymptomForm onUpdateSymptom={updateSymptomInFirebase}/>} />
                 <Route path="/graph" element={<Graphs />} />
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path="*" element={<Home symptoms={symptoms} onDeleteSymptom={handleDeleteSymptom} />} />
