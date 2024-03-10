@@ -103,7 +103,7 @@ function App(props) {
             <Header />
             <Routes>
                 <Route path="/form" element={<SymptomForm onFormSubmit={handleFormSubmit} />} />
-                <Route path="/editForm/:symptomId" element={<EditSymptomForm onUpdateSymptom={updateSymptomInFirebase}/>} />
+                <Route path="/editForm/:symptomId" element={<EditSymptomForm onUpdateSymptom={updateSymptomInFirebase} db={db}/>} />
                 <Route path="/graph" element={<Graphs />} />
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path="*" element={<Home symptoms={symptoms} onDeleteSymptom={handleDeleteSymptom} />} />
