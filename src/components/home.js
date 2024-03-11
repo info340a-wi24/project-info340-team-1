@@ -1,31 +1,18 @@
 //import React from 'react';
 import '../style.css';
-import {SymptomForm} from './form';
-import {EditForm} from './editForm';
-import filterImg from '../img/filter.png';
 import addImg from '../img/add.png';
 import editImg from '../img/edit.png';
 import trashImg from '../img/trash.png';
-import mycharImg from '../img/mychar.png'; 
+import mycharImg from '../img/mychar.png';
 import uwMHImg from '../img/uwMH.png';
-import webMDImg from '../img/webMD.png'; 
-import seaHealthImg from '../img/seattleHealth.png'; 
+import webMDImg from '../img/webMD.png';
+import seaHealthImg from '../img/seattleHealth.png';
 
 // for add function
 import React, { useState, useEffect }from 'react';
-import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-// delete function 
-function deleteButton(event) {
-    const symptomElement = event.target.closest('.symptom');
-    if (symptomElement) {
-        symptomElement.remove();
-    }
-}
-
 export function Home ({symptoms , onDeleteSymptom}) {
-    const location = useLocation();
     const [titles, setTitles] = useState([]);
 
     //Effect to update titles when location state changes
@@ -95,11 +82,10 @@ export function Home ({symptoms , onDeleteSymptom}) {
                         </div>
                 </main>
             </div>
-        <footer className="footer">
-            <p>This page was created by our Info 340 team</p>
-            <p>&copy; 2024 SymptoTrack.</p>
-        </footer>
+            <footer className="footer">
+                <p>This page was created by our Info 340 team</p>
+                <p>&copy; 2024 SymptoTrack.</p>
+            </footer>
         </div>
-        )
-    };
-  
+    )
+};
