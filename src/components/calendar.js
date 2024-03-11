@@ -46,7 +46,7 @@ export function Calendar() {
   }
 
   return (
-    <div id="calendarWrap">
+    <div>
       <div id="calendarPage">
         <div id="add-appointment">
           <h3>Add Appointment</h3>
@@ -82,40 +82,40 @@ export function Calendar() {
           </form>
         </div>
         <div id="event-list">
-      <h3>Upcoming Events</h3>
-      <div className="card-deck">
-        {events.length ? (
-          events.map((event, index) => (
-            <div className="card" key={index}>
-              <div className="card-body">
-                <input
-                  type="checkbox"
-                  checked={selectedEvents.includes(index)}
-                  onChange={() => handleCheckboxChange(index)}
-                />
-                <h5 className="card-title">Date: {event.date}</h5>
-                <p className="card-text">Time: {event.time}</p>
-                <p className="card-text">Description: {event.description}</p>
+          <h3>Upcoming Events</h3>
+          <div className="card-deck">
+            {events.length ? (
+              events.map((event, index) => (
+                <div className="card" key={index}>
+                  <div className="card-body">
+                    <input
+                      type="checkbox"
+                      checked={selectedEvents.includes(index)}
+                      onChange={() => handleCheckboxChange(index)}
+                    />
+                    <h5 className="card-title">Date: {event.date}</h5>
+                    <p className="card-text">Time: {event.time}</p>
+                    <p className="card-text">Description: {event.description}</p>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="card">
+                <div className="card-body no-event">
+                  <p className="card-text"><strong>No Events Scheduled!</strong></p>
+                </div>
               </div>
-            </div>
-          ))
-        ) : (
-          <div className="card">
-            <div className="card-body no-event">
-              <p className="card-text"><strong>No Events Scheduled!</strong></p>
-            </div>
+            )}
           </div>
-        )}
+          {selectedEvents.length > 0 && (
+            <button className="deleteButton" onClick={handleDeleteSelected}>Delete</button>
+          )}
+        </div>
       </div>
-        {selectedEvents.length > 0 && (
-          <button className="deleteButton" onClick={handleDeleteSelected}>Delete</button>
-        )}
-      </div>
+      <footer className="footer">
+        <p>This page was created by our Info 340 team</p>
+        <p>&copy; 2024 SymptoTrack.</p>
+      </footer>
     </div>
-    <footer className="footer">
-      <p>This page was created by our Info 340 team</p>
-      <p>&copy; 2024 SymptoTrack.</p>
-    </footer>
-  </div>
   );
 };
