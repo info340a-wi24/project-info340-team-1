@@ -293,10 +293,6 @@ header a {
 }
 
 /* The style setting for Calendar page -Edrick*/
-#calendarWrap {
-    height: 100vh;
-}
-
 #calendarPage {
     display: flex;
     justify-content: space-between;

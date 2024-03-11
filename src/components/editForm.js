@@ -42,7 +42,7 @@ export function EditSymptomForm({ onUpdateSymptom, db }) {
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="title">Symptom Title:</label>
-                <input 
+                <input
                   type="text"
                   className="form-title-control"
                   name="title"
@@ -51,10 +51,10 @@ export function EditSymptomForm({ onUpdateSymptom, db }) {
                   onChange={handleInputChange}
                 />
               </div>
-  
+
               <div className="form-group">
                 <label htmlFor="date">Date:</label>
-                <input 
+                <input
                   type="date"
                   className="form-control"
                   name="date"
@@ -63,10 +63,10 @@ export function EditSymptomForm({ onUpdateSymptom, db }) {
                   onChange={handleInputChange}
                 />
               </div>
-  
+
               <div className="form-group">
                 <label htmlFor="duration">Duration:</label>
-                <select 
+                <select
                   className="form-control"
                   name="duration"
                   id="duration_field"
@@ -81,10 +81,10 @@ export function EditSymptomForm({ onUpdateSymptom, db }) {
                   <option value="more">More than that</option>
                 </select>
               </div>
-  
+
               <div className="form-group">
                 <label htmlFor="description">Describe Your Symptoms:</label>
-                <textarea 
+                <textarea
                   className="form-control form-text"
                   name="description"
                   id="symptoms_field"
@@ -93,12 +93,12 @@ export function EditSymptomForm({ onUpdateSymptom, db }) {
                   onChange={handleInputChange}
                 ></textarea>
               </div>
-  
+
               <div className="form-group">
                 <label htmlFor="painLevel">Rate your pain:</label><br />
                 {Array.from({ length: 5 }, (_, i) => (
                   <div key={i + 1}>
-                    <input 
+                    <input
                       type="radio"
                       name="painLevel"
                       value={i + 1}
@@ -108,7 +108,7 @@ export function EditSymptomForm({ onUpdateSymptom, db }) {
                   </div>
                 ))}
               </div>
-  
+
               <button id="submit" type="submit" className="btn btn-primary">Update Symptom</button>
             </form>
           </div>

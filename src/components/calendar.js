@@ -46,7 +46,7 @@ export function Calendar() {
   }
 
   return (
-    <div>
+    <div id="wrapp">
       <div id="calendarPage">
         <div id="add-appointment">
           <h3>Add Appointment</h3>

@@ -1,8 +1,5 @@
 //import React from 'react';
 import '../style.css';
-import {SymptomForm} from './form';
-import {EditForm} from './editForm';
-import filterImg from '../img/filter.png';
 import addImg from '../img/add.png';
 import editImg from '../img/edit.png';
 import trashImg from '../img/trash.png';
@@ -13,19 +10,9 @@ import seaHealthImg from '../img/seattleHealth.png';
 
 // for add function
 import React, { useState, useEffect }from 'react';
-import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-// delete function
-function deleteButton(event) {
-    const symptomElement = event.target.closest('.symptom');
-    if (symptomElement) {
-        symptomElement.remove();
-    }
-}
-
 export function Home ({symptoms , onDeleteSymptom}) {
-    const location = useLocation();
     const [titles, setTitles] = useState([]);
 
     //Effect to update titles when location state changes
