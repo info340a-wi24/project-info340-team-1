@@ -93,7 +93,7 @@ export function Calendar() {
                       checked={selectedEvents.includes(index)}
                       onChange={() => handleCheckboxChange(index)}
                     />
-                    <h5 className="card-title">Date: {event.date}</h5>
+                    <p className="card-title">Date: {event.date}</p>
                     <p className="card-text">Time: {event.time}</p>
                     <p className="card-text">Description: {event.description}</p>
                   </div>
