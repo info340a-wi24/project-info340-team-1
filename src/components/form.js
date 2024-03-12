@@ -48,7 +48,7 @@ export function SymptomForm({ onFormSubmit, existingSymptomData }) {
                     <div className="form-container">
                         <form onSubmit={handleSubmit}>
                             <div className="form-group">
-                                <label htmlFor="title">Symptom Title:</label>
+                                <label for="symptom_title">Symptom Title:</label>
                                 <input
                                     type="text"
                                     className="form-title-control"

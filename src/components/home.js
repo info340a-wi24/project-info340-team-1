@@ -22,7 +22,6 @@ export function Home ({symptoms , onDeleteSymptom}) {
     }, [symptoms]);
     return (
         <div id ="wrapper">
-            <div id="contents">
                 <main id="main_page">
                         <div className="container">
                             <div className="tracker">
@@ -81,7 +80,6 @@ export function Home ({symptoms , onDeleteSymptom}) {
                             </div>
                         </div>
                 </main>
-            </div>
             <footer className="footer">
                 <p>This page was created by our Info 340 team</p>
                 <p>&copy; 2024 SymptoTrack.</p>
