@@ -59,7 +59,7 @@ export function SymptomForm({ onFormSubmit, existingSymptomData }) {
                                 />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="date">Date:</label>
+                                <label for="date_field">Date:</label>
                                 <input
                                     type="date"
                                     className="form-control"
@@ -70,7 +70,7 @@ export function SymptomForm({ onFormSubmit, existingSymptomData }) {
                                 />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="duration">Duration:</label>
+                                <label for="duration_field">Duration:</label>
                                 <select
                                     className="form-control"
                                     name="duration"
@@ -87,7 +87,7 @@ export function SymptomForm({ onFormSubmit, existingSymptomData }) {
                                 </select>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="symptoms_field">Describe Your Symptoms:</label>
+                                <label for="symptom_field">Describe Your Symptoms:</label>
                                 <textarea
                                     className="form-control form-text"
                                     name="description"
@@ -98,7 +98,7 @@ export function SymptomForm({ onFormSubmit, existingSymptomData }) {
                                 ></textarea>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="pain">Rate your pain:</label><br />
+                                <label for="pain">Rate your pain:</label><br />
                                 <input
                                     type="radio"
                                     name="painLevel"
