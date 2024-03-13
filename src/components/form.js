@@ -1,6 +1,6 @@
 import React, { useState, useEffect }from 'react';
 import '../style.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 
 
@@ -48,8 +48,8 @@ export function SymptomForm({ onFormSubmit, existingSymptomData }) {
                     <div className="form-container">
                         <form onSubmit={handleSubmit}>
                             <div className="form-group">
-                                <label for="symptom_title">Symptom Title:</label>
-                                <input
+                                <label htmlFor="title">Symptom Title:</label>
+                                <input 
                                     type="text"
                                     className="form-title-control"
                                     name="title"
@@ -59,8 +59,8 @@ export function SymptomForm({ onFormSubmit, existingSymptomData }) {
                                 />
                             </div>
                             <div className="form-group">
-                                <label for="date_field">Date:</label>
-                                <input
+                                <label htmlFor="date">Date:</label>
+                                <input 
                                     type="date"
                                     className="form-control"
                                     name="date"
@@ -70,8 +70,8 @@ export function SymptomForm({ onFormSubmit, existingSymptomData }) {
                                 />
                             </div>
                             <div className="form-group">
-                                <label for="duration_field">Duration:</label>
-                                <select
+                                <label htmlFor="duration">Duration:</label>
+                                <select 
                                     className="form-control"
                                     name="duration"
                                     id="duration_field"
@@ -87,8 +87,8 @@ export function SymptomForm({ onFormSubmit, existingSymptomData }) {
                                 </select>
                             </div>
                             <div className="form-group">
-                                <label for="symptom_field">Describe Your Symptoms:</label>
-                                <textarea
+                                <label htmlFor="symptoms_field">Describe Your Symptoms:</label>
+                                <textarea 
                                     className="form-control form-text"
                                     name="description"
                                     id="symptom_field"
@@ -98,36 +98,36 @@ export function SymptomForm({ onFormSubmit, existingSymptomData }) {
                                 ></textarea>
                             </div>
                             <div className="form-group">
-                                <label for="pain">Rate your pain:</label><br />
-                                <input
+                                <label htmlFor="pain">Rate your pain:</label><br />
+                                <input 
                                     type="radio"
                                     name="painLevel"
                                     value="1"
                                     checked={formData.painLevel === '1'}
                                     onChange={handleInputChange}
                                 /> No Pain<br />
-                                <input
+                                <input 
                                     type="radio"
                                     name="painLevel"
                                     value="2"
                                     checked={formData.painLevel === '2'}
                                     onChange={handleInputChange}
                                 /> Mild Pain<br />
-                                <input
+                                <input 
                                     type="radio"
                                     name="painLevel"
                                     value="3"
                                     checked={formData.painLevel === '3'}
                                     onChange={handleInputChange}
                                 /> Moderate Pain<br />
-                                <input
+                                <input 
                                     type="radio"
                                     name="painLevel"
                                     value="4"
                                     checked={formData.painLevel === '4'}
                                     onChange={handleInputChange}
                                 /> Severe Pain<br />
-                                <input
+                                <input 
                                     type="radio"
                                     name="painLevel"
                                     value="5"

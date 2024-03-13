@@ -11,9 +11,6 @@ body {
     padding: 0;
 }
 
-/* #main_page {
-    height: 100vh;
-} */
 
 header {
     background-color: #0f184f;
@@ -146,11 +143,6 @@ header a {
     color: white;
     text-decoration-line: none;
 }
-
-/* .wrapper {
-    position: relative;
-    min-height: 100vh;
-} */
 
 .container {
     display: flex;

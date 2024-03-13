@@ -1,4 +1,3 @@
-//import React from 'react';
 import '../style.css';
 import addImg from '../img/add.png';
 import editImg from '../img/edit.png';
