@@ -1,16 +1,24 @@
-import React from 'react'; //import React Component
-import {NavLink} from 'react-router-dom';
+import React, { useState } from 'react'; // Import React Component
+import { NavLink } from 'react-router-dom';
 
 export function Nav() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <nav className="nav">
-         <div id="hamburger-menu"><a href="#"><i className="fa fa-bars" aria-label="menu"></i></a></div>
-            <ul id="nav-links">
-                <li><NavLink to="/home">Home</NavLink></li>
-                <li><NavLink to="/calendar">Calendar</NavLink></li>
-                <li><NavLink to="/graph">Data Visualization</NavLink></li>
-                <li><NavLink to="/form">Form</NavLink></li>
-            </ul>
+      <div id="hamburger-menu" onClick={toggleMenu}>
+        <a href="#"><i className="fa fa-bars" aria-label="menu"></i></a>
+      </div>
+      <ul id="nav-links" className={menuOpen ? 'open' : ''}>
+        <li><NavLink to="/home" onClick={toggleMenu}>Home</NavLink></li>
+        <li><NavLink to="/calendar" onClick={toggleMenu}>Calendar</NavLink></li>
+        <li><NavLink to="/graph" onClick={toggleMenu}>Data Visualization</NavLink></li>
+        <li><NavLink to="/form" onClick={toggleMenu}>Form</NavLink></li>
+      </ul>
     </nav>
   );
 }

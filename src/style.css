@@ -450,11 +450,23 @@ button:hover {
     align-items: center;
 }
 
- #close-image {
-    background: transparent;
-    border: none;
+#hamburger-menu {
+    position: fixed;
+    z-index: 100;
+    top: 1rem;
+    right: 1rem;
+    padding: 4px;
+    cursor: pointer;
 }
 
+#hamburger-menu:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+  #nav-links.open {
+    display: block;
+  }
 
 
 /* Responsive design */
@@ -522,20 +534,4 @@ button:hover {
     .link {
         flex: 0 13em;
     }
-}
-
-@media (min-width: 1045px) {
-    /* .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .tracker, .quick-links {
-        width: 80%;
-    } */
-
-    /* #main_page {
-        height: 100vh;
-    } */
 }
